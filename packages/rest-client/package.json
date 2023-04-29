@@ -1,0 +1,13 @@
+{
+  "name": "@kunalnagarco/ui.rest-client",
+  "version": "0.0.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "devDependencies": {
+    "@kunalnagarco/ui.tsconfig": "*"
+  },
+  "scripts": {
+    "build": "rimraf dist && tsc",
+    "lint": "eslint src/ --ext .ts,.tsx --max-warnings 0"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "eslint.enable": true,
+  "eslint.options": {
+    "overrideConfigFile": "packages/eslint-config-custom/index.js"
+  },
+  "editor.tabSize": 2,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "editor.rulers": [80],
+  "files.insertFinalNewline": true
+}

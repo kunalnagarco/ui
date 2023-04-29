@@ -1,0 +1,9 @@
+{
+  "name": "@kunalnagarco/ui.tsconfig",
+  "version": "0.0.0",
+  "files": [
+    "base.json",
+    "react-app.json",
+    "react-library.json"
+  ]
+}
