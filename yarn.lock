@@ -565,13 +565,6 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
-"@nrwl/cli@15.9.2":
-  version "15.9.2"
-  resolved "https://registry.yarnpkg.com/@nrwl/cli/-/cli-15.9.2.tgz#82537d3d85410b0143d37a3b4fade09675356084"
-  integrity sha512-QoCmyrcGakHAYTJaNBbOerRQAmqJHMYGCdqtQidV+aP9p1Dy33XxDELfhd+IYmGqngutXuEWChNpWNhPloLnoA==
-  dependencies:
-    nx "15.9.2"
-
 "@nrwl/nx-cloud@16.0.5", "@nrwl/nx-cloud@latest":
   version "16.0.5"
   resolved "https://registry.yarnpkg.com/@nrwl/nx-cloud/-/nx-cloud-16.0.5.tgz#c963480a71c4afa964fbbe9e4d6bbf222764e9cd"
@@ -579,57 +572,57 @@
   dependencies:
     nx-cloud "16.0.5"
 
-"@nrwl/nx-darwin-arm64@15.9.2":
-  version "15.9.2"
-  resolved "https://registry.yarnpkg.com/@nrwl/nx-darwin-arm64/-/nx-darwin-arm64-15.9.2.tgz#612d8d714ec876cafd6f1483bf5565704d1b75be"
-  integrity sha512-Yv+OVsQt3C/hmWOC+YhJZQlsyph5w1BHfbp4jyCvV1ZXBbb8NdvwxgDHPWXxKPTc1EXuB7aEX3qzxM3/OWEUJg==
-
-"@nrwl/nx-darwin-x64@15.9.2":
-  version "15.9.2"
-  resolved "https://registry.yarnpkg.com/@nrwl/nx-darwin-x64/-/nx-darwin-x64-15.9.2.tgz#3f77bd90dbabf4782d81f773cfb2739a443e595f"
-  integrity sha512-qHfdluHlPzV0UHOwj1ZJ+qNEhzfLGiBuy1cOth4BSzDlvMnkuqBWoprfaXoztzYcus2NSILY1/7b3Jw4DAWmMw==
-
-"@nrwl/nx-linux-arm-gnueabihf@15.9.2":
-  version "15.9.2"
-  resolved "https://registry.yarnpkg.com/@nrwl/nx-linux-arm-gnueabihf/-/nx-linux-arm-gnueabihf-15.9.2.tgz#3374a5a1692b222ce18f2213a47b4d68fb509e70"
-  integrity sha512-0GzwbablosnYnnJDCJvAeZv8LlelSrNwUnGhe43saeoZdAew35Ay1E34zBrg/GCGTASuz+knEEYFM+gDD9Mc6A==
-
-"@nrwl/nx-linux-arm64-gnu@15.9.2":
-  version "15.9.2"
-  resolved "https://registry.yarnpkg.com/@nrwl/nx-linux-arm64-gnu/-/nx-linux-arm64-gnu-15.9.2.tgz#e3ec95c6ee3285c77422886cf4cbec1f04804460"
-  integrity sha512-3mFIY7iUTPG45hSIRaM2DmraCy8W6hNoArAGRrTgYw40BIJHtLrW+Rt7DLyvVXaYCvrKugWOKtxC+jG7kpIZVA==
-
-"@nrwl/nx-linux-arm64-musl@15.9.2":
-  version "15.9.2"
-  resolved "https://registry.yarnpkg.com/@nrwl/nx-linux-arm64-musl/-/nx-linux-arm64-musl-15.9.2.tgz#72ce601d256083ded7380c598f1b3eb4dc2a3472"
-  integrity sha512-FNBnXEtockwxZa4I3NqggrJp0YIbNokJvt/clrICP+ijOacdUDkv8mJedavobkFsRsNq9gzCbRbUScKymrOLrg==
-
-"@nrwl/nx-linux-x64-gnu@15.9.2":
-  version "15.9.2"
-  resolved "https://registry.yarnpkg.com/@nrwl/nx-linux-x64-gnu/-/nx-linux-x64-gnu-15.9.2.tgz#2da6bb50cd80d699310e91c7331baa6cfc8ce197"
-  integrity sha512-gHWsP5lbe4FNQCa1Q/VLxIuik+BqAOcSzyPjdUa4gCDcbxPa8xiE57PgXB5E1XUzOWNnDTlXa/Ll07/TIuKuog==
-
-"@nrwl/nx-linux-x64-musl@15.9.2":
-  version "15.9.2"
-  resolved "https://registry.yarnpkg.com/@nrwl/nx-linux-x64-musl/-/nx-linux-x64-musl-15.9.2.tgz#39b3bda5868a53b722f1d42700dce71c5ff3f6b9"
-  integrity sha512-EaFUukCbmoHsYECX2AS4pxXH933yesBFVvBgD38DkoFDxDoJMVt6JqYwm+d5R7S4R2P9U3l++aurljQTRq567Q==
-
-"@nrwl/nx-win32-arm64-msvc@15.9.2":
-  version "15.9.2"
-  resolved "https://registry.yarnpkg.com/@nrwl/nx-win32-arm64-msvc/-/nx-win32-arm64-msvc-15.9.2.tgz#bc350be5cb7d0bfa6c2c5ced40c5af163a457a2c"
-  integrity sha512-PGAe7QMr51ivx1X3avvs8daNlvv1wGo3OFrobjlu5rSyjC1Y3qHwT9+wdlwzNZ93FIqWOq09s+rE5gfZRfpdAg==
-
-"@nrwl/nx-win32-x64-msvc@15.9.2":
-  version "15.9.2"
-  resolved "https://registry.yarnpkg.com/@nrwl/nx-win32-x64-msvc/-/nx-win32-x64-msvc-15.9.2.tgz#3e46c3f7af196bdbf0deb336ec4f9448c54e4a9f"
-  integrity sha512-Q8onNzhuAZ0l9DNkm8D4Z1AEIzJr8JiT4L2fVBLYrV/R75C2HS3q7lzvfo6oqMY6mXge1cFPcrTtg3YXBQaSWA==
-
-"@nrwl/tao@15.9.2":
-  version "15.9.2"
-  resolved "https://registry.yarnpkg.com/@nrwl/tao/-/tao-15.9.2.tgz#e970efa8b3fb828007b02286e9e505247032b5b3"
-  integrity sha512-+LqNC37w9c6q6Ukdpf0z0tt1PQFNi4gwhHpJvkYQiKRETHjyrrlyqTNEPEyA7PI62RuYC6VrpVw2gzI7ufqZEA==
+"@nrwl/tao@16.0.1":
+  version "16.0.1"
+  resolved "https://registry.yarnpkg.com/@nrwl/tao/-/tao-16.0.1.tgz#9a00aa9b5312181f7a2630ee68ed3f5c53d7ba2d"
+  integrity sha512-mvY+hKJwismbZY9WIfyO8wAOm1xtHn7ibUgiP/mazJv5OM3lnDoSfE83YlCVuhW+KgNq9OHQwIiAU+Y+hFQvEQ==
   dependencies:
-    nx "15.9.2"
+    nx "16.0.1"
+
+"@nx/nx-darwin-arm64@16.0.1":
+  version "16.0.1"
+  resolved "https://registry.yarnpkg.com/@nx/nx-darwin-arm64/-/nx-darwin-arm64-16.0.1.tgz#8961b507d0423c118dcf6c67c02af7d561827132"
+  integrity sha512-ezBykAa6etDIQdh0Rvl8AysJV7lU+/4Grxh0DYMWlVw9EsdJXh5ELr2NepnacdzML411cVSuo6m3SIT5NvMw2Q==
+
+"@nx/nx-darwin-x64@16.0.1":
+  version "16.0.1"
+  resolved "https://registry.yarnpkg.com/@nx/nx-darwin-x64/-/nx-darwin-x64-16.0.1.tgz#d54f0eb02e7fddea6812dbe1b6d7b646d5b37c8a"
+  integrity sha512-ZTFVN0E+02EeWvToyKu1lQWdKHzPbks4R90Pw0cdDgnOaaYj2Z9GQ1rBo+3hq6K2xQb8ONOtsV3uWvrLKoQKww==
+
+"@nx/nx-linux-arm-gnueabihf@16.0.1":
+  version "16.0.1"
+  resolved "https://registry.yarnpkg.com/@nx/nx-linux-arm-gnueabihf/-/nx-linux-arm-gnueabihf-16.0.1.tgz#325f124d8aa3c857a423a447db668f602afcdffa"
+  integrity sha512-WmmVXv5HBNRzn/vWUYapJC5+CPUBaIXo6O8Iz+bniiHtsXeV5W5aYwveF1QOkHePLwUtkE18V1LDIkYksOEHOQ==
+
+"@nx/nx-linux-arm64-gnu@16.0.1":
+  version "16.0.1"
+  resolved "https://registry.yarnpkg.com/@nx/nx-linux-arm64-gnu/-/nx-linux-arm64-gnu-16.0.1.tgz#9e0ed994e508c5b5dc453a96f9d940d3c481d1e3"
+  integrity sha512-G8tOXwi5qmeBcwDah/FB7ge25Iimyu6jXuB+zL/IBXgE98Q0JtWJF/VRI5x3eo7xGq0XWH1V7msgIXN17/RNbQ==
+
+"@nx/nx-linux-arm64-musl@16.0.1":
+  version "16.0.1"
+  resolved "https://registry.yarnpkg.com/@nx/nx-linux-arm64-musl/-/nx-linux-arm64-musl-16.0.1.tgz#9697f25bcef1d3c7d0888b88e17a61f437f8c1b0"
+  integrity sha512-wokwHMtvTzisw8G9VHgKAfPLtPsKlkJqOXJJpHkbxKXDZvwf/AQs03xDWCSV2P7B277VIPWJxuZ7pFqne0nRfw==
+
+"@nx/nx-linux-x64-gnu@16.0.1":
+  version "16.0.1"
+  resolved "https://registry.yarnpkg.com/@nx/nx-linux-x64-gnu/-/nx-linux-x64-gnu-16.0.1.tgz#2d0cb6f994ec7f0227dc82827d5036a11780d056"
+  integrity sha512-9GUs45JmqpGz14ZXt4636rxj6mul0UO9S6dJpJND7M3KPFbPELg0Urj9BUtXz4vhwL2lhKMcz6XvBpQSjyE2bg==
+
+"@nx/nx-linux-x64-musl@16.0.1":
+  version "16.0.1"
+  resolved "https://registry.yarnpkg.com/@nx/nx-linux-x64-musl/-/nx-linux-x64-musl-16.0.1.tgz#677ec1b91b6a7f24329f9c67adb428910c7d62d4"
+  integrity sha512-vGq6e6/v+/YiKZeyKNyTmYNavOFTSHRAyze9I4UGB0aRouYrEuuemBSdCff+IXtwvUZEgYkEW5vTJainRBG+ig==
+
+"@nx/nx-win32-arm64-msvc@16.0.1":
+  version "16.0.1"
+  resolved "https://registry.yarnpkg.com/@nx/nx-win32-arm64-msvc/-/nx-win32-arm64-msvc-16.0.1.tgz#c619326a1e18dc728d1103ce876e2b245f5a38ee"
+  integrity sha512-3xROoV57qq6ibzmeTNcx8j7Rdj3hmSryzge2ynh9Zr+4dFT4WrsF72WRYQg/kbgNRhV+IfDNq5SMM2mPDl+aRw==
+
+"@nx/nx-win32-x64-msvc@16.0.1":
+  version "16.0.1"
+  resolved "https://registry.yarnpkg.com/@nx/nx-win32-x64-msvc/-/nx-win32-x64-msvc-16.0.1.tgz#ccdc365c0b5a2b1006ae546c4c1fec0ae3a7e061"
+  integrity sha512-7jkC3kukEBnV/1+YMFY0VjbGGlGihpQEj3LrgjVdM8+Uf1qcyKhmHlVV3iJ87Bix+wVG7TmsSJ+XPchh0FJlsw==
 
 "@parcel/watcher@2.0.4":
   version "2.0.4"
@@ -2197,13 +2190,12 @@ nx-cloud@16.0.5:
     tar "6.1.11"
     yargs-parser ">=21.1.1"
 
-nx@15.9.2:
-  version "15.9.2"
-  resolved "https://registry.yarnpkg.com/nx/-/nx-15.9.2.tgz#d7ace1e5ae64a47f1b553dc5da08dbdd858bde96"
-  integrity sha512-wtcs+wsuplSckvgk+bV+/XuGlo+sVWzSG0RpgWBjQYeqA3QsVFEAPVY66Z5cSoukDbTV77ddcAjEw+Rz8oOR1A==
+nx@16.0.1:
+  version "16.0.1"
+  resolved "https://registry.yarnpkg.com/nx/-/nx-16.0.1.tgz#d3f1f9e3e56262d8bd4876bd2126cfe4ab0fdddb"
+  integrity sha512-x1NUs3ZGRWI3CdY1Qt4JdB9fOpjNkfP064HI3P6YjmHYSilbkVF7xe9bxOptjwCgMlTE3kOa66qC2fI5bKvG4w==
   dependencies:
-    "@nrwl/cli" "15.9.2"
-    "@nrwl/tao" "15.9.2"
+    "@nrwl/tao" "16.0.1"
     "@parcel/watcher" "2.0.4"
     "@yarnpkg/lockfile" "^1.1.0"
     "@yarnpkg/parsers" "^3.0.0-rc.18"
@@ -2238,15 +2230,15 @@ nx@15.9.2:
     yargs "^17.6.2"
     yargs-parser "21.1.1"
   optionalDependencies:
-    "@nrwl/nx-darwin-arm64" "15.9.2"
-    "@nrwl/nx-darwin-x64" "15.9.2"
-    "@nrwl/nx-linux-arm-gnueabihf" "15.9.2"
-    "@nrwl/nx-linux-arm64-gnu" "15.9.2"
-    "@nrwl/nx-linux-arm64-musl" "15.9.2"
-    "@nrwl/nx-linux-x64-gnu" "15.9.2"
-    "@nrwl/nx-linux-x64-musl" "15.9.2"
-    "@nrwl/nx-win32-arm64-msvc" "15.9.2"
-    "@nrwl/nx-win32-x64-msvc" "15.9.2"
+    "@nx/nx-darwin-arm64" "16.0.1"
+    "@nx/nx-darwin-x64" "16.0.1"
+    "@nx/nx-linux-arm-gnueabihf" "16.0.1"
+    "@nx/nx-linux-arm64-gnu" "16.0.1"
+    "@nx/nx-linux-arm64-musl" "16.0.1"
+    "@nx/nx-linux-x64-gnu" "16.0.1"
+    "@nx/nx-linux-x64-musl" "16.0.1"
+    "@nx/nx-win32-arm64-msvc" "16.0.1"
+    "@nx/nx-win32-x64-msvc" "16.0.1"
 
 once@^1.3.0, once@^1.4.0:
   version "1.4.0"
