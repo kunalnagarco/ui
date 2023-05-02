@@ -18,11 +18,18 @@ jobs:
         with:
           node-version: '18'
       - name: Install dependencies
-        run: yarn install --frozen-lockfile
+        run: |
+          yarn install --frozen-lockfile
       - name: Create build
-        run: yarn lerna run build
+        run: |
+          yarn lerna run build
+      - name: NPM Identity
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > .npmrc
       - name: Release
-        run: yarn lerna publish --canary --yes --summary-file
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          yarn lerna publish from-package --canary --no-verify-access --yes --summary-file
