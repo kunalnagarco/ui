@@ -35,9 +35,9 @@ jobs:
       - name: Version
         run: |
           if [[ ${{ github.base_ref }} == "main" ]]; then
-            yarn lerna version --conventional-commits --conventional-graduate --yes
+            yarn lerna version --no-private --conventional-commits --conventional-graduate --yes
           else
-            yarn lerna version --conventional-commits --conventional-prerelease --yes
+            yarn lerna version --no-private --conventional-commits --conventional-prerelease --yes
           fi
       - name: Release
         env:
