@@ -22,7 +22,7 @@ jobs:
       - name: Create build
         run: yarn lerna run build
       - name: Release
-        run: yarn lerna publish
+        run: yarn lerna publish --canary --yes --summary-file
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

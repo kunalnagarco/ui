@@ -28,6 +28,9 @@
   ],
   "license": "MIT",
   "author": "Kunal Nagar <2741371+kunalnagar@users.noreply.github.com>",
+  "publishConfig": {
+    "access": "public"
+  },
   "devDependencies": {},
   "dependencies": {},
   "peerDependencies": {
