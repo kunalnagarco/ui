@@ -30,7 +30,7 @@ jobs:
           echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > .npmrc
       - name: Version
         run: |
-          if [ ${{ github.base_ref }} = master ]; then
+          if [ ${{ github.base_ref }} = main ]; then
             yarn lerna version --conventional-commits --conventional-graduate --yes
           else
             yarn lerna version --conventional-commits --conventional-prerelease --preid beta --yes
