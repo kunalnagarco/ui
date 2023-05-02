@@ -34,7 +34,7 @@ jobs:
           git config user.email "${{ github.actor }}@users.noreply.github.com"
       - name: Version
         run: |
-          if [[ ${{ github.base_ref }} == "main" ]]; then
+          if [ "${{ github.base_ref }}" == "main" ]; then
             yarn lerna version --no-private --conventional-commits --conventional-graduate --yes
           else
             yarn lerna version --no-private --conventional-commits --conventional-prerelease --yes
