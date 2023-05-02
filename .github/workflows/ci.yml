@@ -22,6 +22,8 @@ jobs:
         run: yarn install --frozen-lockfile
       - name: Create build
         run: yarn nx affected -t build
+      - name: Release
+        run: yarn pack
       # - name: Release
       #   run: yarn publish
       #   env:
