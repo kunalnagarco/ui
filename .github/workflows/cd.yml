@@ -1,0 +1,45 @@
+ame: Continuous Deployment
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      - name: Install dependencies
+        run: |
+          yarn install --frozen-lockfile
+      - name: Create build
+        run: |
+          yarn lerna run build
+      - name: NPM Identity
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > .npmrc
+      - name: Identity
+        run: |
+          git config user.name "${{ github.actor }}"
+          git config user.email "${{ github.actor }}@users.noreply.github.com"
+      - name: Version
+        shell: bash
+        run: |
+          if [[ "${{ github.ref_name }}" == "main" ]]; then
+            yarn lerna version --no-private --conventional-commits --conventional-graduate --yes
+          else
+            yarn lerna version --no-private --conventional-commits --conventional-prerelease --yes
+          fi
+      - name: Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          yarn lerna publish --yes --summary-file
