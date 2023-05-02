@@ -28,13 +28,17 @@ jobs:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
           echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > .npmrc
+      - name: Identity
+        run: |
+          git config user.name "${{ github.actor }}"
+          git config user.email "${{ github.actor }}@users.noreply.github.com"
       - name: Version
         run: |
           echo ${{ github.base_ref }}
           if [ ${{ github.base_ref }} == main ]; then
             yarn lerna version --conventional-commits --conventional-graduate --yes
           else
-            yarn lerna version --conventional-commits --conventional-prerelease --preid beta --yes
+            yarn lerna version --conventional-commits --conventional-prerelease --yes
           fi
       - name: Release
         env:
