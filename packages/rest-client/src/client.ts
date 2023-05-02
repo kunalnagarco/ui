@@ -38,6 +38,6 @@ export interface RestClientContract {
   setBaseUrl: (baseUrl: string) => void;
 }
 
-export class RestClient implements RestClientContract {
-  private _baseUrl: string;
-}
+// export class RestClient implements RestClientContract {
+//   private _baseUrl: string;
+// }
