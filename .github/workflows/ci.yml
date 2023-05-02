@@ -17,14 +17,12 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: '18'
-      - uses: nrwl/nx-set-shas@v3
       - name: Install dependencies
         run: yarn install --frozen-lockfile
       - name: Create build
-        run: yarn nx affected -t build
+        run: yarn lerna run build
       - name: Release
-        run: yarn pack
-      # - name: Release
-      #   run: yarn publish
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: yarn lerna publish
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
