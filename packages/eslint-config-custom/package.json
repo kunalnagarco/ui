@@ -3,9 +3,9 @@
   "version": "0.2.1",
   "description": "An ESLint configuration for use across javascript projects",
   "files": [
-    "index.js"
+    "dist/index.js"
   ],
-  "main": "index.js",
+  "main": "dist/index.js",
   "keywords": [
     "eslint",
     "eslint-config",
@@ -30,6 +30,9 @@
   "author": "Kunal Nagar <2741371+kunalnagar@users.noreply.github.com>",
   "publishConfig": {
     "access": "public"
+  },
+  "scripts": {
+    "build": "rimraf dist && tsc"
   },
   "peerDependencies": {
     "eslint": ">=7.x",
