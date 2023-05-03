@@ -33,8 +33,9 @@
   },
   "peerDependencies": {
     "eslint": ">=7.x",
-    "eslint-config-airbnb-typescript-prettier": ">=4.x",
-    "prettier": ">=2.x",
-    "typescript": ">=4.x"
+    "eslint-config-prettier": ">=8.x",
+    "eslint-config-react-app": ">=7.x",
+    "eslint-plugin-import": ">=2.x",
+    "prettier": ">=2.x"
   }
 }
