@@ -1,7 +1,7 @@
 {
   "eslint.enable": true,
   "eslint.options": {
-    "overrideConfigFile": "packages/eslint-config-custom/index.js"
+    "overrideConfigFile": "packages/eslint-config/index.js"
   },
   "editor.tabSize": 2,
   "editor.codeActionsOnSave": {
