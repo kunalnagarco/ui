@@ -31,11 +31,13 @@ jobs:
           git config user.email "${{ github.actor }}@users.noreply.github.com"
       - name: Version
         shell: bash
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           if [[ "${{ github.ref_name }}" == "main" ]]; then
-            yarn lerna version --no-private --yes
+            yarn lerna version --no-private --conventional-commits --include-merged-tags --yes --create-release github
           else
-            yarn lerna version --no-private --conventional-prerelease --yes
+            yarn lerna version --no-private --conventional-commits --conventional-prerelease --include-merged-tags --yes --create-release github
           fi
       - name: Release
         env:
