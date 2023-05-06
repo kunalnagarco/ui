@@ -32,7 +32,7 @@ jobs:
       - name: Version
         shell: bash
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           if [[ "${{ github.ref_name }}" == "main" ]]; then
             yarn lerna version --no-private --conventional-commits --include-merged-tags --yes --create-release github
