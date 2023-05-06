@@ -1,6 +1,9 @@
 {
   "name": "@kunalnagarco/ui.tsconfig",
   "version": "0.0.1",
+  "publishConfig": {
+    "access": "public"
+  },
   "files": [
     "base.json",
     "react-app.json",

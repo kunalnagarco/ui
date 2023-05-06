@@ -1,7 +1,9 @@
 {
   "name": "@kunalnagarco/ui.rest-client",
   "version": "0.0.0",
-  "private": true,
+  "publishConfig": {
+    "access": "public"
+  },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "devDependencies": {
