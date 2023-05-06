@@ -1,14 +1,14 @@
 {
   "name": "@kunalnagarco/ui.rest-client",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "publishConfig": {
     "access": "public"
   },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "devDependencies": {
-    "@kunalnagarco/ui.jest-config": "^0.0.3",
-    "@kunalnagarco/ui.tsconfig": "^0.0.4"
+    "@kunalnagarco/ui.jest-config": "^0.0.4",
+    "@kunalnagarco/ui.tsconfig": "^0.0.5"
   },
   "scripts": {
     "build": "rimraf dist && tsc",

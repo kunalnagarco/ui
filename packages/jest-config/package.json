@@ -1,13 +1,13 @@
 {
   "name": "@kunalnagarco/ui.jest-config",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "publishConfig": {
     "access": "public"
   },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "devDependencies": {
-    "@kunalnagarco/ui.tsconfig": "^0.0.4",
+    "@kunalnagarco/ui.tsconfig": "^0.0.5",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^14.0.0",
     "@testing-library/react-hooks": "^8.0.1",
