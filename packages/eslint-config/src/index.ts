@@ -2,7 +2,7 @@ module.exports = {
   extends: ['react-app', 'react-app/jest', 'prettier'],
   plugins: ['import'],
   rules: {
-    // Decides import order
+    // Plugin to decide import order
     'import/order': [
       'error',
       {
