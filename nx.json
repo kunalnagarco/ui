@@ -9,8 +9,20 @@
     }
   },
   "targetDefaults": {
-    "build": {
+    "start": {
       "dependsOn": ["^build"]
+    },
+    "build": {
+      "dependsOn": ["^build"],
+      "outputs": ["{projectRoot}/dist"]
+    },
+    "test": {
+      "dependsOn": [
+        {
+          "projects": "dependencies",
+          "target": "build"
+        }
+      ]
     }
   }
 }

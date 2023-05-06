@@ -1,14 +1,16 @@
 {
   "name": "@kunalnagarco/ui.rest-client",
   "version": "0.0.0",
+  "private": true,
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "private": true,
   "devDependencies": {
-    "@kunalnagarco/ui.tsconfig": "*"
+    "@kunalnagarco/ui.tsconfig": "*",
+    "@kunalnagarco/ui.jest-config": "*"
   },
   "scripts": {
     "build": "rimraf dist && tsc",
-    "lint": "eslint src/ --ext .ts,.tsx --max-warnings 0"
+    "lint": "eslint src/ --ext .ts,.tsx --max-warnings 0",
+    "test:watch": "jest --watch"
   }
 }
