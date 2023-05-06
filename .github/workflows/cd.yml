@@ -29,14 +29,14 @@ jobs:
         run: |
           git config user.name "${{ github.actor }}"
           git config user.email "${{ github.actor }}@users.noreply.github.com"
-      - name: Version
-        shell: bash
-        run: |
-          if [[ "${{ github.ref_name }}" == "main" ]]; then
-            yarn lerna version --no-private --conventional-commits --yes
-          else
-            yarn lerna version --no-private --conventional-commits --conventional-prerelease --yes
-          fi
+      # - name: Version
+      #   shell: bash
+      #   run: |
+      #     if [[ "${{ github.ref_name }}" == "main" ]]; then
+      #       yarn lerna version --no-private --conventional-commits --yes
+      #     else
+      #       yarn lerna version --no-private --conventional-commits --conventional-prerelease --yes
+      #     fi
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
