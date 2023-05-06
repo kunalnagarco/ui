@@ -33,9 +33,9 @@ jobs:
         shell: bash
         run: |
           if [[ "${{ github.ref_name }}" == "main" ]]; then
-            yarn lerna version --no-private --conventional-commits --yes
+            yarn lerna version --no-private --conventional-commits --include-merged-tags --yes
           else
-            yarn lerna version --no-private --conventional-commits --conventional-prerelease --yes
+            yarn lerna version --no-private --conventional-commits --conventional-prerelease --include-merged-tags --yes
           fi
       - name: Release
         env:
