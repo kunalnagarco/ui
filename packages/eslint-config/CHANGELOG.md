@@ -1,5 +1,11 @@
 # @kunalnagarco/eslint-config
 
+## 1.1.0
+
+### Minor Changes
+
+- Bump minor versions for all packages
+
 ## 1.0.0
 
 ### Major Changes
