@@ -43,7 +43,6 @@ jobs:
           echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > .npmrc
       - name: Publish packages
         run: yarn nx release publish
-        shell: bash
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           NPM_CONFIG_PROVENANCE: true
