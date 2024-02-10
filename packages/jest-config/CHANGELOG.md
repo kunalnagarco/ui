@@ -1,3 +1,54 @@
+## 0.1.0 (2024-02-10)
+
+
+### 🚀 Features
+
+- Remove lerna and use nx
+
+- Add repository URL
+
+- Release 1.0
+
+
+### 🩹 Fixes
+
+- CI/CD scripts
+
+- CI
+
+- More CI stuff
+
+- Yet more CI stuff
+
+- Remove changelog
+
+- Release
+
+- Perms?
+
+- CI
+
+- Remove provenance
+
+- CI
+
+- Add Identity
+
+- CD
+
+- CHange release to npx
+
+- Update nx.json
+
+- Try basic nx release config
+
+- Updates
+
+
+### ❤️  Thank You
+
+- Kunal Nagar
+
 # Change Log
 
 All notable changes to this project will be documented in this file.
