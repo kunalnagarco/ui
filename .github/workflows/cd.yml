@@ -8,8 +8,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    # permissions:
-    #   id-token: write
+    permissions:
+      contents: read
+      id-token: write
     steps:
       - uses: actions/checkout@v4
         with:
@@ -17,6 +18,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
+          registry-url: 'https://registry.npmjs.org'
       - name: Get node version
         id: node
         run: echo "::set-output name=version::$(node -v)"
@@ -31,17 +33,17 @@ jobs:
         run: yarn install
       - name: Print Environment Info
         run: yarn nx report
-      - name: Bump version
-        run: yarn nx release version
-      - name: Create build
-        run: yarn nx affected -t build
-      - name: NPM Identity
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: |
-          echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > .npmrc
+      # - name: Bump version
+      #   run: yarn nx release version
+      # - name: Create build
+      #   run: yarn nx affected -t build
+      # - name: NPM Identity
+      #   env:
+      #     NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      #   run: |
+      #     echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > .npmrc
       - name: Publish packages
-        run: yarn nx release publish
+        run: yarn nx release
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-          # NPM_CONFIG_PROVENANCE: true
+          NPM_CONFIG_PROVENANCE: true
