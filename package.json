@@ -8,7 +8,7 @@
   },
   "private": true,
   "devDependencies": {
-    "@jscutlery/semver": "^5.1.1",
+    "@changesets/cli": "^2.27.1",
     "@nx/js": "^18.0.4",
     "nx": "^18.0.4",
     "prettier": "^3.0.0",

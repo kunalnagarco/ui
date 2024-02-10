@@ -28,7 +28,7 @@ jobs:
             **/node_modules
           key: ${{ runner.os }}-node_modules-${{ hashFiles('**/yarn.lock') }}-${{ steps.node.outputs.version }}
       - name: Install dependencies
-        run: yarn install --frozen-lockfile
+        run: yarn install
       - name: Print Environment Info
         run: yarn nx report
       - name: Derive appropriate SHAs for base and head for `nx affected` commands
