@@ -27,19 +27,8 @@
   },
   "release": {
     "projects": ["packages/**"],
-    "projectsRelationship": "independent",
-    "git": {
-      "commit": true,
-      "tag": true
-    },
     "version": {
-      "generatorOptions": {
-        "specifierSource": "conventional-commits",
-        "currentVersionResolver": "git-tag"
-      }
-    },
-    "changelog": {
-      "projectChangelogs": true
+      "conventionalCommits": true
     }
   }
 }
