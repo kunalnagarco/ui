@@ -41,4 +41,4 @@ jobs:
       - name: Version affected packages
         run: yarn nx affected -t version --base=${{ env.NX_BASE }} --head=${{ env.NX_HEAD }}
       - name: Changelog affected packages
-        run: yarn nx affected -t changelog --base=${{ env.NX_BASE }} --head=${{ env.NX_HEAD }}
+        run: yarn nx affected -t changelog --from=${{ env.NX_BASE }} --to=${{ env.NX_HEAD }}
