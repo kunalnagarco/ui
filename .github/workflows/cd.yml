@@ -8,8 +8,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    permissions:
-      id-token: write
+    # permissions:
+    #   id-token: write
     steps:
       - uses: actions/checkout@v4
         with:
@@ -35,13 +35,13 @@ jobs:
         run: yarn nx release version
       - name: Create build
         run: yarn nx affected -t build
-      # - name: NPM Identity
-      #   env:
-      #     NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-      #   run: |
-      #     echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > .npmrc
+      - name: NPM Identity
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > .npmrc
       - name: Publish packages
         run: yarn nx release publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-          NPM_CONFIG_PROVENANCE: true
+          # NPM_CONFIG_PROVENANCE: true
