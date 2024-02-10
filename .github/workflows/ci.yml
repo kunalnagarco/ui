@@ -38,5 +38,3 @@ jobs:
           echo "HEAD: ${{ env.NX_HEAD }}"
       - name: Build affected packages
         run: yarn nx affected -t build --base=${{ env.NX_BASE }} --head=${{ env.NX_HEAD }}
-      - name: Release affected packages (dry-run)
-        run: yarn nx affected -t version --dryRun --base=${{ env.NX_BASE }} --head=${{ env.NX_HEAD }}
