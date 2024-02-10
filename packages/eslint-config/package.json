@@ -5,6 +5,9 @@
   "files": [
     "dist/index.js"
   ],
+  "repository": {
+    "url": "https://github.com/kunalnagarco/ui.git"
+  },
   "main": "dist/index.js",
   "keywords": [
     "eslint",
