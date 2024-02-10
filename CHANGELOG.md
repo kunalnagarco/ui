@@ -1,3 +1,14 @@
+## 0.4.0 (2024-02-10)
+
+
+### 🚀 Features
+
+- Release 1.0 ([e2dd771](https://github.com/kunalnagarco/ui/commit/e2dd771))
+
+### ❤️  Thank You
+
+- Kunal Nagar @kunalnagar
+
 ## 0.3.0 (2024-02-10)
 
 
