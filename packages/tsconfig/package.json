@@ -11,5 +11,8 @@
     "base.json",
     "react-app.json",
     "react-library.json"
-  ]
+  ],
+  "scripts": {
+    "version": "yarn nx release version"
+  }
 }

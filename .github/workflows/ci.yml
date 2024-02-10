@@ -36,5 +36,7 @@ jobs:
       - run: |
           echo "BASE: ${{ env.NX_BASE }}"
           echo "HEAD: ${{ env.NX_HEAD }}"
-      - name: Create build
+      - name: Build affected packages
         run: yarn nx affected -t build --base=${{ env.NX_BASE }} --head=${{ env.NX_HEAD }}
+      - name: Version affected packages
+        run: yarn nx affected -t version --base=${{ env.NX_BASE }} --head=${{ env.NX_HEAD }}
