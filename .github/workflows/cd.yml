@@ -32,6 +32,10 @@ jobs:
         run: yarn install
       - name: Print Environment Info
         run: yarn nx report
+      - name: Bump version
+        run: yarn nx release version
+      - name: Create changelog
+        run: yarn nx release changelog
       - name: Create build
         run: yarn nx affected -t build
       - name: NPM Identity
