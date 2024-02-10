@@ -35,11 +35,11 @@ jobs:
         run: yarn nx release version
       - name: Create build
         run: yarn nx affected -t build
-      - name: NPM Identity
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: |
-          echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > .npmrc
+      # - name: NPM Identity
+      #   env:
+      #     NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      #   run: |
+      #     echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > .npmrc
       - name: Publish packages
         run: yarn nx release publish
         env:
