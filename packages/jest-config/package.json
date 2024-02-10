@@ -19,6 +19,7 @@
     "build": "rimraf dist && tsc",
     "lint": "eslint src/ --ext .ts,.tsx --max-warnings 0",
     "lint:fix": "eslint --fix src/ --ext .ts,.tsx --max-warnings 0",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "release": "yarn publish"
   }
 }

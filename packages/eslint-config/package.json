@@ -32,7 +32,8 @@
     "access": "public"
   },
   "scripts": {
-    "build": "rimraf dist && tsc"
+    "build": "rimraf dist && tsc",
+    "release": "yarn publish"
   },
   "peerDependencies": {
     "eslint": ">=7.x",
