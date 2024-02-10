@@ -29,15 +29,6 @@
     "projects": ["packages/**"],
     "version": {
       "conventionalCommits": true
-    },
-    "changelog": {
-      "workspaceChangelog": {
-        "createRelease": "github"
-      },
-      "git": {
-        "commit": true,
-        "tag": true
-      }
     }
   }
 }
