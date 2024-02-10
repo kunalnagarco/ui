@@ -20,8 +20,8 @@
   },
   "scripts": {
     "build": "rimraf dist && tsc",
-    "release:dry-run": "yarn semantic-release --dry-run",
-    "release": "yarn semantic-release",
+    "release:dry-run": "npx semantic-release --dry-run",
+    "release": "npx semantic-release",
     "lint": "eslint src/ --ext .ts,.tsx --max-warnings 0",
     "lint:fix": "eslint --fix src/ --ext .ts,.tsx --max-warnings 0",
     "test:watch": "jest --watch"
