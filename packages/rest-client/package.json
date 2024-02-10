@@ -10,7 +10,7 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "devDependencies": {
-    "@kunalnagarco/ui.jest-config": "^0.7.0",
+    "@kunalnagarco/ui.jest-config": "^0.8.0",
     "@kunalnagarco/ui.tsconfig": "^0.7.0"
   },
   "scripts": {
