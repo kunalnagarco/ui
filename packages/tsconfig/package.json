@@ -13,7 +13,7 @@
     "react-library.json"
   ],
   "scripts": {
-    "version": "yarn nx release version",
-    "changelog": "yarn nx release changelog"
+    "release:dry-run": "yarn semantic-release --dry-run",
+    "release": "yarn semantic-release"
   }
 }

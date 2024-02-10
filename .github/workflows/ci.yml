@@ -31,16 +31,12 @@ jobs:
         run: yarn install --frozen-lockfile
       - name: Print Environment Info
         run: yarn nx report
-      - name: Release (dry-run)
-        run: npx nx release --dry-run
-      # - name: Derive appropriate SHAs for base and head for `nx affected` commands
-      #   uses: nrwl/nx-set-shas@v4
-      # - run: |
-      #     echo "BASE: ${{ env.NX_BASE }}"
-      #     echo "HEAD: ${{ env.NX_HEAD }}"
-      # - name: Build affected packages
-      #   run: yarn nx affected -t build --base=${{ env.NX_BASE }} --head=${{ env.NX_HEAD }}
-      # - name: Version affected packages
-      #   run: yarn nx affected -t version --base=${{ env.NX_BASE }} --head=${{ env.NX_HEAD }}
-      # - name: Changelog affected packages
-      #   run: yarn nx affected -t changelog --from=${{ env.NX_BASE }} --to=${{ env.NX_HEAD }}
+      - name: Derive appropriate SHAs for base and head for `nx affected` commands
+        uses: nrwl/nx-set-shas@v4
+      - run: |
+          echo "BASE: ${{ env.NX_BASE }}"
+          echo "HEAD: ${{ env.NX_HEAD }}"
+      - name: Build affected packages
+        run: yarn nx affected -t build --base=${{ env.NX_BASE }} --head=${{ env.NX_HEAD }}
+      - name: Release affected packages (dry-run)
+        run: yarn nx affected -t release:dry-run --base=${{ env.NX_BASE }} --head=${{ env.NX_HEAD }}

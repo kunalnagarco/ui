@@ -15,8 +15,8 @@
   },
   "scripts": {
     "build": "rimraf dist && tsc",
-    "version": "yarn nx release version",
-    "changelog": "yarn nx release changelog",
+    "release:dry-run": "yarn semantic-release --dry-run",
+    "release": "yarn semantic-release",
     "lint": "eslint src/ --ext .ts,.tsx --max-warnings 0",
     "test:watch": "jest --watch"
   }
