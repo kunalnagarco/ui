@@ -32,8 +32,6 @@ jobs:
         run: yarn install
       - name: Print Environment Info
         run: yarn nx report
-      - uses: nrwl/nx-set-shas@v3
-      - run: git branch --track main origin/main
       - name: Create build
         run: yarn nx affected -t build
       - name: NPM Identity
