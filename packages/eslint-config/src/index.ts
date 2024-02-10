@@ -1,3 +1,4 @@
+// Test comment
 module.exports = {
   extends: ['react-app', 'react-app/jest', 'prettier'],
   plugins: ['import'],
