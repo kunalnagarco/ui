@@ -2,10 +2,14 @@
   "name": "kunalnagarco-ui",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "build:all": "nx run-many -t build",
+    "lint:all": "nx run-many -t lint"
+  },
   "private": true,
   "devDependencies": {
-    "lerna": "^8.0.0",
+    "@nx/js": "^18.0.4",
+    "nx": "^18.0.4",
     "prettier": "^3.0.0",
     "ts-node": "^10.9.1",
     "typescript": "^5.0.4"
