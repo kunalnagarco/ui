@@ -1,5 +1,11 @@
 # @kunalnagarco/ui.jest-config
 
+## 0.9.0
+
+### Minor Changes
+
+- Add build to CD script
+
 ## 0.8.0
 
 ### Minor Changes
