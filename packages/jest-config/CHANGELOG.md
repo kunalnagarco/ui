@@ -1,5 +1,11 @@
 # @kunalnagarco/ui.jest-config
 
+## 0.8.0
+
+### Minor Changes
+
+- Test GitHub Action for changesets
+
 ## 0.7.0
 
 ### Minor Changes

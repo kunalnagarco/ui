@@ -1,5 +1,11 @@
 # @kunalnagarco/eslint-config
 
+## 1.2.0
+
+### Minor Changes
+
+- Test GitHub Action for changesets
+
 ## 1.1.0
 
 ### Minor Changes
