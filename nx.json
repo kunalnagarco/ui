@@ -24,16 +24,5 @@
         }
       ]
     }
-  },
-  "release": {
-    "projects": ["packages/**"],
-    "version": {
-      "conventionalCommits": true
-    },
-    "changelog": {
-      "workspaceChangelog": {
-        "createRelease": "github"
-      }
-    }
   }
 }

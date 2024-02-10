@@ -11,5 +11,6 @@
     "base.json",
     "react-app.json",
     "react-library.json"
-  ]
+  ],
+  "scripts": {}
 }
