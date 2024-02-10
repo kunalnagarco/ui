@@ -36,7 +36,8 @@
   },
   "scripts": {
     "build": "rimraf dist && tsc",
-    "version": "yarn nx release version"
+    "version": "yarn nx release version",
+    "changelog": "yarn nx release changelog"
   },
   "peerDependencies": {
     "eslint": ">=7.x",

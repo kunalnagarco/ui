@@ -13,6 +13,7 @@
     "react-library.json"
   ],
   "scripts": {
-    "version": "yarn nx release version"
+    "version": "yarn nx release version",
+    "changelog": "yarn nx release changelog"
   }
 }
