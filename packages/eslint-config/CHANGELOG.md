@@ -1,5 +1,11 @@
 # @kunalnagarco/eslint-config
 
+## 1.3.0
+
+### Minor Changes
+
+- Add build to CD script
+
 ## 1.2.0
 
 ### Minor Changes
