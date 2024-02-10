@@ -35,7 +35,5 @@ jobs:
       - run: git branch --track main origin/main
       - name: Create build
         run: yarn nx affected -t build
-      - name: Release regular (dry-run)
-        run: yarn nx release --dry-run
       - name: Release affected (dry-run)
         run: yarn nx affected -t release --dry-run
