@@ -26,12 +26,20 @@
     }
   },
   "release": {
+    "projects": ["cli"],
     "projectsRelationship": "independent",
-    "changelog": {
-      "projectChangelogs": true
+    "git": {
+      "commit": true,
+      "tag": true
     },
     "version": {
-      "conventionalCommits": true
+      "generatorOptions": {
+        "specifierSource": "conventional-commits",
+        "currentVersionResolver": "git-tag"
+      }
+    },
+    "changelog": {
+      "projectChangelogs": true
     }
   }
 }
