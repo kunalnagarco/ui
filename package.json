@@ -8,12 +8,10 @@
   },
   "private": true,
   "devDependencies": {
+    "@jscutlery/semver": "^5.1.1",
     "@nx/js": "^18.0.4",
-    "@semantic-release/changelog": "^6.0.3",
-    "@semantic-release/git": "^10.0.1",
     "nx": "^18.0.4",
     "prettier": "^3.0.0",
-    "semantic-release": "^23.0.2",
     "ts-node": "^10.9.1",
     "typescript": "^5.0.4"
   },

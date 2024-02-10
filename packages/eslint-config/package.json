@@ -35,9 +35,7 @@
     "access": "public"
   },
   "scripts": {
-    "build": "rimraf dist && tsc",
-    "release:dry-run": "npx semantic-release --dry-run",
-    "release": "npx semantic-release"
+    "build": "rimraf dist && tsc"
   },
   "peerDependencies": {
     "eslint": ">=7.x",

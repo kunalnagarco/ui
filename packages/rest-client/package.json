@@ -15,8 +15,6 @@
   },
   "scripts": {
     "build": "rimraf dist && tsc",
-    "release:dry-run": "npx semantic-release --dry-run",
-    "release": "npx semantic-release",
     "lint": "eslint src/ --ext .ts,.tsx --max-warnings 0",
     "test:watch": "jest --watch"
   }
