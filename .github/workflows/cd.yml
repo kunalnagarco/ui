@@ -8,6 +8,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
     steps:
       - uses: actions/checkout@v4
         with:
@@ -27,30 +30,20 @@ jobs:
           key: ${{ runner.os }}-node_modules-${{ hashFiles('**/yarn.lock') }}-${{ steps.node.outputs.version }}
       - name: Install dependencies
         run: yarn install
+      - name: Print Environment Info
+        run: yarn nx report
+      - uses: nrwl/nx-set-shas@v3
+      - run: git branch --track main origin/main
       - name: Create build
-        run: |
-          yarn lerna run build
+        run: yarn nx affected -t build
       - name: NPM Identity
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
           echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > .npmrc
-      - name: Identity
-        run: |
-          git config user.name "${{ github.actor }}"
-          git config user.email "${{ github.actor }}@users.noreply.github.com"
-      - name: Version
+      - name: Publish packages
+        run: yarn nx release publish
         shell: bash
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          if [[ "${{ github.ref_name }}" == "main" ]]; then
-            yarn lerna version --no-private --conventional-commits --include-merged-tags --yes --create-release github
-          else
-            yarn lerna version --no-private --conventional-commits --conventional-prerelease --include-merged-tags --yes --create-release github
-          fi
-      - name: Release
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          yarn lerna publish --yes --summary-file
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_ACCESS_TOKEN }}
+          NPM_CONFIG_PROVENANCE: true
