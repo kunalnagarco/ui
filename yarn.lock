@@ -1476,16 +1476,6 @@
     "@jridgewell/resolve-uri" "^3.1.0"
     "@jridgewell/sourcemap-codec" "^1.4.14"
 
-"@kunalnagarco/ui.jest-config@^0.3.0":
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/@kunalnagarco/ui.jest-config/-/ui.jest-config-0.3.0.tgz#b70652dd8c5adb8376e7f38502920b1833762a03"
-  integrity sha512-zSnmY5pUBU4i9RXbPVIhkn9YGNH1lXjaMKRuZkp3mCSNmQdBKjXsAjN5uXELj8NfKvihMjb9L1si0OaWMTTsIw==
-
-"@kunalnagarco/ui.tsconfig@^0.3.0":
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/@kunalnagarco/ui.tsconfig/-/ui.tsconfig-0.3.0.tgz#9ca0b85d156f4be9cb77cf11e4937e4b097b9a79"
-  integrity sha512-IbDPo/ZDPYC5KGDoWl82f7gnm9SDWU+CSkdaQkKEE79sjSrwpOd1LaqXBly/GFEm/9FZlH78Er0k78hrVzQkGA==
-
 "@manypkg/find-root@^1.1.0":
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@manypkg/find-root/-/find-root-1.1.0.tgz#a62d8ed1cd7e7d4c11d9d52a8397460b5d4ad29f"
@@ -1839,7 +1829,7 @@
   resolved "https://registry.yarnpkg.com/@types/minimist/-/minimist-1.2.5.tgz#ec10755e871497bcd83efe927e43ec46e8c0747e"
   integrity sha512-hov8bUuiLiyFPGyFPE1lwWhmzYbirOXQNNo40+y3zow8aFVTeyn3VWL0VFFfdNddA8S4Vf0Tc062rzyNr7Paag==
 
-"@types/node@*":
+"@types/node@*", "@types/node@^20.11.17":
   version "20.11.17"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-20.11.17.tgz#cdd642d0e62ef3a861f88ddbc2b61e32578a9292"
   integrity sha512-QmgQZGWu1Yw9TDyAP9ZzpFJKynYNeOvwMJmaxABfieQoVoiVOS6MN1WSpqpRcbeA5+RW82kraAVxCCJg+780Qw==
