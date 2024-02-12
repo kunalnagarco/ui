@@ -39,7 +39,6 @@ jobs:
       - name: Build affected packages
         run: yarn nx affected -t build --base=${{ env.NX_BASE }} --head=${{ env.NX_HEAD }}
       - name: Pack affected packages
-        shell: bash
         run: |
           yarn nx affected -t pack:run --base=${{ env.NX_BASE }} --head=${{ env.NX_HEAD }}
-          for f in packages/**/*/kunalnagarco*.tgz; do echo "\n$f\n"; tar tvf "$f"; done
+          bash ./scripts/list_affected_packages_dist_files.sh
