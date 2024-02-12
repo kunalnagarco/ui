@@ -12,5 +12,7 @@
     "react-app.json",
     "react-library.json"
   ],
-  "scripts": {}
+  "scripts": {
+    "pack:run": "yarn pack"
+  }
 }
