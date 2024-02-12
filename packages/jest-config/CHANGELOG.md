@@ -1,5 +1,11 @@
 # @kunalnagarco/ui.jest-config
 
+## 0.10.0
+
+### Minor Changes
+
+- Release minor versions of all packages
+
 ## 0.9.0
 
 ### Minor Changes

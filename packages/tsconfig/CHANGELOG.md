@@ -1,5 +1,11 @@
 # @kunalnagarco/ui.tsconfig
 
+## 0.8.0
+
+### Minor Changes
+
+- Release minor versions of all packages
+
 ## 0.7.0
 
 ### Minor Changes
