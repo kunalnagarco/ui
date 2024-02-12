@@ -1,5 +1,11 @@
 # @kunalnagarco/eslint-config
 
+## 1.4.0
+
+### Minor Changes
+
+- Release minor versions of all packages
+
 ## 1.3.0
 
 ### Minor Changes
