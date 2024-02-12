@@ -1,5 +1,11 @@
 # @kunalnagarco/ui.jest-config
 
+## 0.12.0
+
+### Minor Changes
+
+- Fix CD permissions for provenance
+
 ## 0.11.0
 
 ### Minor Changes

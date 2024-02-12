@@ -1,5 +1,11 @@
 # @kunalnagarco/ui.tsconfig
 
+## 0.10.0
+
+### Minor Changes
+
+- Fix CD permissions for provenance
+
 ## 0.9.0
 
 ### Minor Changes
