@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ls -al packages/
+ls -al packages/**/*.tgz
 
 for f in packages/**/*/kunalnagarco*.tgz
 do 
