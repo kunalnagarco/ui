@@ -1,12 +1,12 @@
 {
   "name": "@kunalnagarco/eslint-config",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "description": "An ESLint configuration for use across javascript projects",
   "files": [
     "dist"
   ],
   "repository": {
-    "url": "https://github.com/kunalnagarco/ui.git"
+    "url": "git+https://github.com/kunalnagarco/ui.git"
   },
   "main": "dist/index.js",
   "keywords": [

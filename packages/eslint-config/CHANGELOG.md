@@ -1,5 +1,11 @@
 # @kunalnagarco/eslint-config
 
+## 1.6.0
+
+### Minor Changes
+
+- Fix CD permissions for provenance
+
 ## 1.5.0
 
 ### Minor Changes

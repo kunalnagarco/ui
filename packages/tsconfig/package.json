@@ -1,12 +1,12 @@
 {
   "name": "@kunalnagarco/ui.tsconfig",
-  "version": "0.9.0",
+  "version": "0.10.0",
   "publishConfig": {
     "access": "public",
     "provenance": true
   },
   "repository": {
-    "url": "https://github.com/kunalnagarco/ui.git"
+    "url": "git+https://github.com/kunalnagarco/ui.git"
   },
   "files": [
     "base.json",

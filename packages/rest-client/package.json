@@ -1,19 +1,19 @@
 {
   "name": "@kunalnagarco/ui.rest-client",
-  "version": "0.8.0",
+  "version": "0.9.0",
   "publishConfig": {
     "access": "public",
     "provenance": true
   },
   "repository": {
-    "url": "https://github.com/kunalnagarco/ui.git"
+    "url": "git+https://github.com/kunalnagarco/ui.git"
   },
   "files": [
     "dist"
   ],
   "devDependencies": {
-    "@kunalnagarco/ui.jest-config": "^0.11.0",
-    "@kunalnagarco/ui.tsconfig": "^0.9.0"
+    "@kunalnagarco/ui.jest-config": "^0.12.0",
+    "@kunalnagarco/ui.tsconfig": "^0.10.0"
   },
   "scripts": {
     "build": "rimraf dist && tsc",
