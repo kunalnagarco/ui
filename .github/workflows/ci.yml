@@ -41,4 +41,4 @@ jobs:
       - name: Pack affected packages
         run: |
           yarn nx affected -t pack:run --base=${{ env.NX_BASE }} --head=${{ env.NX_HEAD }}
-          bash ./scripts/list_affected_packages_dist_files.sh
+          sh ./.github/workflows/scripts/list_affected_packages_dist_files.sh
