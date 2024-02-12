@@ -1,5 +1,11 @@
 # @kunalnagarco/ui.jest-config
 
+## 0.11.0
+
+### Minor Changes
+
+- Add npm provenance support
+
 ## 0.10.0
 
 ### Minor Changes

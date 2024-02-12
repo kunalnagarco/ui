@@ -1,5 +1,11 @@
 # @kunalnagarco/eslint-config
 
+## 1.5.0
+
+### Minor Changes
+
+- Add npm provenance support
+
 ## 1.4.0
 
 ### Minor Changes
