@@ -7,8 +7,9 @@
   "repository": {
     "url": "https://github.com/kunalnagarco/ui.git"
   },
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "devDependencies": {
     "@kunalnagarco/ui.tsconfig": "^0.7.0",
     "@testing-library/jest-dom": "^6.0.0",
@@ -20,6 +21,7 @@
   },
   "scripts": {
     "build": "rimraf dist && tsc",
+    "pack:run": "yarn pack",
     "lint": "eslint src/ --ext .ts,.tsx --max-warnings 0",
     "lint:fix": "eslint --fix src/ --ext .ts,.tsx --max-warnings 0",
     "test:watch": "jest --watch"
