@@ -41,8 +41,4 @@ jobs:
       - name: Pack affected packages
         run: |
           yarn nx affected -t pack:run --base=${{ env.NX_BASE }} --head=${{ env.NX_HEAD }}
-          for f in packages/**/*/kunalnagarco*.tgz 
-          do 
-              echo "content of $f:"
-              tar tvf "$f"
-          done
+          for f in "packages/**/*/kunalnagarco*.tgz"; do tar tvf "$f"; done
