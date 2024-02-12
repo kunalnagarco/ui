@@ -39,4 +39,4 @@ jobs:
       - name: Build affected packages
         run: yarn nx affected -t build --base=${{ env.NX_BASE }} --head=${{ env.NX_HEAD }}
       - name: Pack affected packages
-        run: yarn nx affected -t build --base=${{ env.NX_BASE }} --head=${{ env.NX_HEAD }}
+        run: yarn nx affected -t pack:run --base=${{ env.NX_BASE }} --head=${{ env.NX_HEAD }}
