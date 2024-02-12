@@ -1,5 +1,11 @@
 # @kunalnagarco/ui.rest-client
 
+## 0.8.0
+
+### Minor Changes
+
+- Add npm provenance support
+
 ## 0.7.0
 
 ### Minor Changes

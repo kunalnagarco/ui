@@ -1,5 +1,11 @@
 # @kunalnagarco/ui.tsconfig
 
+## 0.9.0
+
+### Minor Changes
+
+- Add npm provenance support
+
 ## 0.8.0
 
 ### Minor Changes
