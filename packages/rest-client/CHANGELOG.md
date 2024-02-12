@@ -1,5 +1,11 @@
 # @kunalnagarco/ui.rest-client
 
+## 0.12.0
+
+### Minor Changes
+
+- Change permission to write
+
 ## 0.11.0
 
 ### Minor Changes

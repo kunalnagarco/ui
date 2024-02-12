@@ -1,5 +1,11 @@
 # @kunalnagarco/eslint-config
 
+## 1.9.0
+
+### Minor Changes
+
+- Change permission to write
+
 ## 1.8.0
 
 ### Minor Changes

@@ -1,5 +1,11 @@
 # @kunalnagarco/ui.tsconfig
 
+## 0.13.0
+
+### Minor Changes
+
+- Change permission to write
+
 ## 0.12.0
 
 ### Minor Changes
