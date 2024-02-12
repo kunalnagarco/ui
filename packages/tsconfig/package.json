@@ -6,7 +6,7 @@
     "provenance": true
   },
   "repository": {
-    "url": "https://github.com/kunalnagarco/ui.git"
+    "url": "git+https://github.com/kunalnagarco/ui.git"
   },
   "files": [
     "base.json",
