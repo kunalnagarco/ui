@@ -2,7 +2,8 @@
   "name": "@kunalnagarco/ui.rest-client",
   "version": "0.7.0",
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "provenance": true
   },
   "repository": {
     "url": "https://github.com/kunalnagarco/ui.git"

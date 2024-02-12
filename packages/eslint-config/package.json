@@ -32,7 +32,8 @@
   "license": "MIT",
   "author": "Kunal Nagar <2741371+kunalnagar@users.noreply.github.com>",
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "provenance": true
   },
   "scripts": {
     "build": "rimraf dist && tsc",
