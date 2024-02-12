@@ -1,5 +1,11 @@
 # @kunalnagarco/ui.tsconfig
 
+## 0.11.0
+
+### Minor Changes
+
+- Allow read permission for provenance
+
 ## 0.10.0
 
 ### Minor Changes

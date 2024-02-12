@@ -1,5 +1,11 @@
 # @kunalnagarco/ui.jest-config
 
+## 0.13.0
+
+### Minor Changes
+
+- Allow read permission for provenance
+
 ## 0.12.0
 
 ### Minor Changes
