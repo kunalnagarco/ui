@@ -1,5 +1,11 @@
 # @kunalnagarco/ui.rest-client
 
+## 0.10.0
+
+### Minor Changes
+
+- Allow read permission for provenance
+
 ## 0.9.0
 
 ### Minor Changes

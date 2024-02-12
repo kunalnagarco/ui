@@ -1,5 +1,11 @@
 # @kunalnagarco/eslint-config
 
+## 1.7.0
+
+### Minor Changes
+
+- Allow read permission for provenance
+
 ## 1.6.0
 
 ### Minor Changes
