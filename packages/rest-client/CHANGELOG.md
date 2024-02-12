@@ -1,5 +1,11 @@
 # @kunalnagarco/ui.rest-client
 
+## 0.11.0
+
+### Minor Changes
+
+- Remove Identity file
+
 ## 0.10.0
 
 ### Minor Changes

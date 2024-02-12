@@ -1,5 +1,11 @@
 # @kunalnagarco/ui.tsconfig
 
+## 0.12.0
+
+### Minor Changes
+
+- Remove Identity file
+
 ## 0.11.0
 
 ### Minor Changes

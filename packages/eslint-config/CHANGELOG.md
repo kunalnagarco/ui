@@ -1,5 +1,11 @@
 # @kunalnagarco/eslint-config
 
+## 1.8.0
+
+### Minor Changes
+
+- Remove Identity file
+
 ## 1.7.0
 
 ### Minor Changes

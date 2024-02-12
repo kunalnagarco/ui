@@ -1,5 +1,11 @@
 # @kunalnagarco/ui.jest-config
 
+## 0.14.0
+
+### Minor Changes
+
+- Remove Identity file
+
 ## 0.13.0
 
 ### Minor Changes
