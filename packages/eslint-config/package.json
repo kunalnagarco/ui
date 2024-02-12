@@ -36,7 +36,7 @@
   },
   "scripts": {
     "build": "rimraf dist && tsc",
-    "pack:run": "yarn pack --dry-run"
+    "pack:run": "yarn pack"
   },
   "peerDependencies": {
     "eslint": ">=7.x",

@@ -13,6 +13,6 @@
     "react-library.json"
   ],
   "scripts": {
-    "pack:run": "yarn pack --dry-run"
+    "pack:run": "yarn pack"
   }
 }
