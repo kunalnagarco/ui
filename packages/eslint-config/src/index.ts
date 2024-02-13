@@ -1,6 +1,12 @@
 module.exports = {
-  extends: ['react-app', 'react-app/jest', 'prettier'],
-  plugins: ['import'],
+  extends: ['airbnb-typescript', 'prettier'],
+  plugins: ['import', '@typescript-eslint', 'jest'],
+  env: {
+    browser: true,
+    es6: true,
+    jest: true,
+  },
+  parser: '@typescript-eslint/parser',
   rules: {
     'import/order': [
       'error',

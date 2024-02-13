@@ -1,5 +1,11 @@
 # @kunalnagarco/eslint-config
 
+## 2.0.0
+
+### Major Changes
+
+- Switch from ESLint React App config to AirBnB TypeScript
+
 ## 1.9.0
 
 ### Minor Changes
