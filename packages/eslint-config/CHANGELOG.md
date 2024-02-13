@@ -1,5 +1,11 @@
 # @kunalnagarco/eslint-config
 
+## 2.1.0
+
+### Minor Changes
+
+- Add right peerdependencies to ESLint package
+
 ## 2.0.0
 
 ### Major Changes
