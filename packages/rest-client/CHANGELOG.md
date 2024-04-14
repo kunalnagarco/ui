@@ -1,5 +1,11 @@
 # @kunalnagarco/ui.rest-client
 
+## 0.13.0
+
+### Minor Changes
+
+- Remove nx and update dependencies
+
 ## 0.12.0
 
 ### Minor Changes
