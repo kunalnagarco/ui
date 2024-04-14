@@ -39,15 +39,19 @@
     "build": "rimraf dist && tsc",
     "pack:run": "yarn pack"
   },
+  "devDependencies": {
+    "rimraf": "^5.0.5",
+    "typescript": "^5.0.4"
+  },
   "peerDependencies": {
+    "@typescript-eslint/eslint-plugin": ">=6.x",
+    "@typescript-eslint/parser": ">=6.x",
     "eslint": ">=7.x",
+    "eslint-config-airbnb": ">=19.x",
+    "eslint-config-airbnb-typescript": ">=17.x",
     "eslint-config-prettier": ">=8.x",
     "eslint-plugin-import": ">=2.x",
     "eslint-plugin-jest": ">=27.x",
-    "eslint-config-airbnb": ">=19.x",
-    "eslint-config-airbnb-typescript": ">=17.x",
-    "@typescript-eslint/eslint-plugin": ">=6.x",
-    "@typescript-eslint/parser": ">=6.x",
     "prettier": ">=2.x"
   }
 }

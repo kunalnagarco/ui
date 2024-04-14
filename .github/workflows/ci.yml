@@ -28,17 +28,6 @@ jobs:
             **/node_modules
           key: ${{ runner.os }}-node_modules-${{ hashFiles('**/yarn.lock') }}-${{ steps.node.outputs.version }}
       - name: Install dependencies
-        run: yarn install
-      - name: Print Environment Info
-        run: yarn nx report
-      - name: Derive appropriate SHAs for base and head for `nx affected` commands
-        uses: nrwl/nx-set-shas@v4
-      - run: |
-          echo "BASE: ${{ env.NX_BASE }}"
-          echo "HEAD: ${{ env.NX_HEAD }}"
-      - name: Build affected packages
-        run: yarn nx affected -t build --base=${{ env.NX_BASE }} --head=${{ env.NX_HEAD }}
-      - name: Pack affected packages
-        run: |
-          yarn nx affected -t pack:run --base=${{ env.NX_BASE }} --head=${{ env.NX_HEAD }}
-          for f in packages/**/*.tgz; do echo "$f"; tar tvf "$f"; done
+        run: yarn --immutable --immutable-cache
+      - name: Build
+        run: yarn build:all

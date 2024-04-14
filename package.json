@@ -3,20 +3,18 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "build:all": "nx run-many -t build",
-    "lint:all": "nx run-many -t lint"
+    "build:all": "yarn workspaces foreach -A -vip --topological-dev run build",
+    "lint:all": "yarn workspaces foreach -A -vip --topological-dev run lint"
   },
   "private": true,
   "devDependencies": {
     "@changesets/cli": "^2.27.1",
-    "@nx/js": "^18.0.4",
     "@types/node": "^20.11.17",
-    "nx": "^18.0.4",
     "prettier": "^3.0.0",
-    "ts-node": "^10.9.1",
-    "typescript": "^5.0.4"
+    "ts-node": "^10.9.1"
   },
   "workspaces": [
     "packages/*"
-  ]
+  ],
+  "packageManager": "yarn@4.1.1"
 }
