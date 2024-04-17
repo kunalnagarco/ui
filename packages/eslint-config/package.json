@@ -2,13 +2,10 @@
   "name": "@kunalnagarco/eslint-config",
   "version": "2.2.0",
   "description": "An ESLint configuration for use across javascript projects",
-  "files": [
-    "dist"
-  ],
   "repository": {
     "url": "git+https://github.com/kunalnagarco/ui.git"
   },
-  "main": "dist/index.js",
+  "main": "src/index.js",
   "keywords": [
     "eslint",
     "eslint-config",
@@ -36,7 +33,6 @@
     "provenance": true
   },
   "scripts": {
-    "build": "rimraf dist && tsc",
     "pack:run": "yarn pack"
   },
   "devDependencies": {

@@ -1,5 +1,11 @@
+import airbnbConfig from 'airbnb';
+import airbnbTypescriptConfig from 'airbnb-typescript';
+import prettierConfig from 'prettier';
+
 module.exports = {
-  extends: ['airbnb', 'airbnb-typescript', 'prettier'],
+  airbnbConfig,
+  airbnbTypescriptConfig,
+  prettierConfig,
   plugins: ['import', '@typescript-eslint', 'jest'],
   env: {
     browser: true,
