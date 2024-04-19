@@ -11,6 +11,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      id-token: write
     steps:
       - uses: actions/checkout@v4
         with:
@@ -24,3 +27,15 @@ jobs:
         run: yarn --immutable
       - name: Build
         run: yarn build:all
+      - name: Creating .npmrc
+        run: |
+          cat << EOF > "$HOME/.npmrc"
+            //registry.npmjs.org/:_authToken=$NPM_TOKEN
+          EOF
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: Release
+        run: yarn changeset publish --tag beta
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
