@@ -1,0 +1,29 @@
+name: Pre-release
+
+on: pull_request
+
+jobs:
+  publish_prerelease:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'yarn'
+          cache-dependency-path: 'yarn.lock'
+      - name: Install dependencies
+        run: yarn --immutable
+      - name: Build
+        run: yarn build:all
+      - name: Publish Pre-release
+        run: |
+          COMMIT_SHA=${{ github.event.pull_request.head.sha }}
+          COMMIT_SHA_SHORT=$(git rev-parse --short "$COMMIT_SHA")
+          yarn changeset version --snapshot prerelease-$COMMIT_SHA_SHORT  
+          yarn changeset publish --tag prerelease
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

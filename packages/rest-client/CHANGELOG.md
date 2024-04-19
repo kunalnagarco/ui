@@ -1,5 +1,11 @@
 # @kunalnagarco/ui.rest-client
 
+## 0.14.0-beta.0
+
+### Minor Changes
+
+- Add support for prereleases
+
 ## 0.13.0
 
 ### Minor Changes
