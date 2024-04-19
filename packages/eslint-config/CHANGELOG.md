@@ -1,11 +1,5 @@
 # @kunalnagarco/eslint-config
 
-## 2.3.0-beta.0
-
-### Minor Changes
-
-- Add support for prereleases
-
 ## 2.2.0
 
 ### Minor Changes

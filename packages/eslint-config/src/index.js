@@ -1,9 +1,8 @@
-import airbnbConfig from 'airbnb';
-import airbnbTypescriptConfig from 'airbnb-typescript';
-import prettierConfig from 'prettier';
-import importPlugin from 'eslint-plugin-import';
-import typescriptEslintPlugin from '@typescript-eslint';
-import jestPlugin from 'jest';
+const airbnbConfig = require('airbnb');
+const airbnbTypescriptConfig = require('airbnb-typescript');
+const prettierConfig = require('prettier');
+const importPlugin = require('eslint-plugin-import');
+const typescriptEslintPlugin = require('@typescript-eslint');
 
 module.exports = {
   airbnbConfig,
@@ -12,7 +11,6 @@ module.exports = {
   plugins: {
     importPlugin,
     typescriptEslintPlugin,
-    jestPlugin,
   },
   env: {
     browser: true,

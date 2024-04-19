@@ -6,7 +6,5 @@
     "@kunalnagarco/ui.rest-client": "0.13.0",
     "@kunalnagarco/ui.tsconfig": "0.13.0"
   },
-  "changesets": [
-    "itchy-guests-pretend"
-  ]
+  "changesets": ["itchy-guests-pretend"]
 }
