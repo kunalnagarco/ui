@@ -1,8 +1,8 @@
-const airbnbConfig = require('airbnb');
-const airbnbTypescriptConfig = require('airbnb-typescript');
-const prettierConfig = require('prettier');
+const airbnbConfig = require('eslint-config-airbnb');
+const airbnbTypescriptConfig = require('eslint-config-airbnb-typescript');
+const prettierConfig = require('eslint-config-prettier');
 const importPlugin = require('eslint-plugin-import');
-const typescriptEslintPlugin = require('@typescript-eslint');
+const typescriptEslintPlugin = require('@typescript-eslint/eslint-plugin');
 
 module.exports = {
   airbnbConfig,
