@@ -1,6 +1,6 @@
 {
   "name": "@kunalnagarco/ui.rest-client",
-  "version": "0.13.0",
+  "version": "0.14.0",
   "publishConfig": {
     "access": "public",
     "provenance": true
@@ -11,6 +11,8 @@
   "files": [
     "dist"
   ],
+  "main": "dist/index.js",
+  "module": "dist/index.d.ts",
   "devDependencies": {
     "@kunalnagarco/ui.tsconfig": "*",
     "rimraf": "^5.0.5",
