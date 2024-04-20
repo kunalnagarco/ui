@@ -6,12 +6,6 @@
 
 - bfe2df9: Export rest client from base package to allow for imports
 
-## 0.14.0-beta.0
-
-### Minor Changes
-
-- Export rest client from base package to allow for imports
-
 ## 0.13.0
 
 ### Minor Changes
