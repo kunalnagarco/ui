@@ -1,6 +1,6 @@
 {
   "name": "@kunalnagarco/ui.rest-client",
-  "version": "0.14.0-beta.0",
+  "version": "0.14.0-beta.3",
   "publishConfig": {
     "access": "public",
     "provenance": true
