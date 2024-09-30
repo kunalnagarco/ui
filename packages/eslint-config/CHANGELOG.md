@@ -1,5 +1,11 @@
 # @kunalnagarco/eslint-config
 
+## 2.3.0
+
+### Minor Changes
+
+- Refactor ESLint package to remove TypeScript
+
 ## 2.2.0
 
 ### Minor Changes
