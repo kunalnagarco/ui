@@ -314,7 +314,6 @@ __metadata:
   resolution: "@kunalnagarco/eslint-config@workspace:packages/eslint-config"
   dependencies:
     rimraf: "npm:^5.0.5"
-    typescript: "npm:^5.0.4"
   peerDependencies:
     "@typescript-eslint/eslint-plugin": ">=6.x"
     "@typescript-eslint/parser": ">=6.x"
