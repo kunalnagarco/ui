@@ -12,8 +12,5 @@
     "base.json",
     "react-app.json",
     "react-library.json"
-  ],
-  "scripts": {
-    "pack:run": "yarn pack"
-  }
+  ]
 }

@@ -36,8 +36,7 @@
     "provenance": true
   },
   "scripts": {
-    "build": "rimraf dist && tsc",
-    "pack:run": "yarn pack"
+    "build": "rimraf dist && tsc"
   },
   "devDependencies": {
     "rimraf": "^5.0.5",
