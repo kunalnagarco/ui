@@ -35,10 +35,7 @@ jobs:
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: Release
-        run: |
-          yarn changeset pre enter alpha
-          yarn changeset version
-          yarn changeset publish
+        run: yarn changeset publish
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
