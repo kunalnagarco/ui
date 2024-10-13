@@ -1,5 +1,6 @@
 module.exports = {
   extends: ['airbnb', 'airbnb-typescript', 'prettier'],
+
   plugins: ['import', '@typescript-eslint', 'jest'],
   env: {
     browser: true,
