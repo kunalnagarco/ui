@@ -16,7 +16,6 @@
   },
   "release": {
     "version": {
-      "conventionalCommits": true,
       "preVersionCommand": "yarn nx run-many -t build"
     },
     "changelog": {
