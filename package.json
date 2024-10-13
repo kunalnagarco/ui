@@ -9,12 +9,17 @@
   "private": true,
   "devDependencies": {
     "@changesets/cli": "^2.27.1",
+    "@nx/js": "^20.0.0",
     "@types/node": "^20.11.17",
+    "nx": "20.0.0",
     "prettier": "^3.0.0",
     "ts-node": "^10.9.1"
   },
   "workspaces": [
     "packages/*"
   ],
-  "packageManager": "yarn@4.2.2"
+  "packageManager": "yarn@4.2.2",
+  "dependencies": {
+    "yargs": "^17.7.2"
+  }
 }

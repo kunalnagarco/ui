@@ -1,0 +1,29 @@
+{
+  "$schema": "./node_modules/nx/schemas/nx-schema.json",
+  "targetDefaults": {
+    "build": {
+      "dependsOn": ["^build"],
+      "cache": true
+    },
+    "lint": {
+      "dependsOn": ["^lint"],
+      "cache": true
+    },
+    "test:watch": {
+      "dependsOn": ["^test:watch"],
+      "cache": true
+    }
+  },
+  "release": {
+    "version": {
+      "conventionalCommits": true,
+      "preVersionCommand": "yarn nx run-many -t build"
+    },
+    "changelog": {
+      "workspaceChangelog": {
+        "createRelease": "github"
+      }
+    }
+  },
+  "defaultBase": "main"
+}
