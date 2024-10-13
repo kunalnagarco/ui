@@ -1,0 +1,10 @@
+{
+  "mode": "pre",
+  "tag": "alpha",
+  "initialVersions": {
+    "@kunalnagarco/eslint-config": "2.2.0",
+    "@kunalnagarco/ui.rest-client": "0.14.0",
+    "@kunalnagarco/ui.tsconfig": "0.13.0"
+  },
+  "changesets": []
+}
