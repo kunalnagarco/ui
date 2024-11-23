@@ -2,9 +2,7 @@
   "$schema": "https://json.schemastore.org/tsconfig",
   "extends": "@kunalnagarco/ui.tsconfig/base.json",
   "compilerOptions": {
-    "outDir": "dist",
-    "declaration": false,
-    "declarationMap": false
+    "outDir": "dist"
   },
   "include": ["src"]
 }

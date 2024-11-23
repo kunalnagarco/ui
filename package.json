@@ -8,10 +8,7 @@
   },
   "private": true,
   "devDependencies": {
-    "@changesets/cli": "^2.27.1",
-    "@types/node": "^20.11.17",
-    "prettier": "^3.0.0",
-    "ts-node": "^10.9.1"
+    "@types/node": "20.14.0"
   },
   "workspaces": [
     "packages/*"
