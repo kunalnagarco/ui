@@ -2,16 +2,16 @@
   "name": "@kunalnagarco/eslint-config",
   "version": "2.2.0",
   "description": "An ESLint configuration for use across javascript projects",
-  "files": [
-    "dist"
-  ],
   "repository": {
-    "url": "git+https://github.com/kunalnagarco/ui.git"
+    "type": "git",
+    "url": "https://github.com/kunalnagarco/ui.git",
+    "directory": "packages/eslint-config"
   },
   "main": "dist/index.js",
   "keywords": [
     "eslint",
     "eslint-config",
+    "eslint flat config",
     "eslintconfig",
     "typescript",
     "react",
@@ -36,23 +36,24 @@
     "provenance": true
   },
   "scripts": {
-    "build": "rimraf dist && tsc",
+    "validate:config": "eslint --inspect-config",
     "pack:run": "yarn pack"
   },
   "devDependencies": {
-    "@kunalnagarco/ui.tsconfig": "workspace:*",
-    "rimraf": "6.0.1",
-    "typescript": "5.7.2"
+    "@eslint/config-inspector": "0.5.6",
+    "@eslint/eslintrc": "3.2.0",
+    "eslint": "9.16.0",
+    "eslint-config-airbnb": "19.0.4",
+    "eslint-config-prettier": "9.1.0",
+    "eslint-plugin-import": "2.31.0",
+    "rimraf": "6.0.1"
   },
   "peerDependencies": {
-    "@typescript-eslint/eslint-plugin": ">=6.x",
-    "@typescript-eslint/parser": ">=6.x",
-    "eslint": ">=7.x",
+    "eslint": ">=9.x",
     "eslint-config-airbnb": ">=19.x",
     "eslint-config-airbnb-typescript": ">=17.x",
     "eslint-config-prettier": ">=8.x",
     "eslint-plugin-import": ">=2.x",
-    "eslint-plugin-jest": ">=27.x",
     "prettier": ">=2.x"
   }
 }
