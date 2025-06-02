@@ -1,6 +1,6 @@
 {
   "name": "kunalnagarco-ui",
-  "version": "0.0.0",
+  "version": "0.13.0-1748822505396",
   "license": "MIT",
   "scripts": {
     "build:all": "yarn workspaces foreach -A -vip --topological-dev run build",
@@ -8,10 +8,12 @@
   },
   "private": true,
   "devDependencies": {
-    "@types/node": "20.17.11"
+    "@types/node": "20.17.11",
+    "zx": "8.5.4"
   },
   "workspaces": [
     "packages/*"
   ],
-  "packageManager": "yarn@4.5.2"
+  "packageManager": "yarn@4.5.2",
+  "stableVersion": "0.0.0"
 }
