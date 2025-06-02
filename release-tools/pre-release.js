@@ -18,13 +18,14 @@ async function main() {
     });
     const { name, version } = JSON.parse(packageJsonStr);
     console.log(name, version);
-    const hash = new Date().getTime();
-    await $`yarn version --immediate ${version}-${hash}`;
-    const packageJsonStr2 = readFileSync("package.json", {
-      encoding: "utf8",
-    });
-    const { name2, version2 } = JSON.parse(packageJsonStr2);
-    console.log(name2, version2);
+    // const hash = new Date().getTime();
+    // await $`yarn version --deferred ${version}-alpha-${hash}`;
+    await $`yarn version --deferred patch`;
+    // const packageJsonStr2 = readFileSync("package.json", {
+    //   encoding: "utf8",
+    // });
+    // const { name2, version2 } = JSON.parse(packageJsonStr2);
+    // console.log(name2, version2);
     cd(before);
     // if (exclude.some((p) => dir.endsWith(p))) {
     //   console.log(`skipping build for ${dir}`);
@@ -32,6 +33,7 @@ async function main() {
     // }
     // console.log(dir);
   }
+  await $`yarn version apply --all --prerelease --dry-run`;
 }
 
 main();
