@@ -29,6 +29,7 @@ jobs:
         run: yarn build:all
       - name: Add npmToken to .yarnrc.yml
         run: |
+          echo ${{ github.event.head_commit.message }}
           echo npmAuthToken: "$NPM_TOKEN" >> ./.yarnrc.yml
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
