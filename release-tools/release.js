@@ -2,18 +2,11 @@
  * When merging to main, GitHub actions will release a version to npm
  * for each package in the yarn workspace.
  */
-const { program } = require("commander");
 const { $, cd, glob } = require("zx");
 const { readFileSync } = require("fs");
 
-program.option("--commit-message");
-
-program.parse(process.argv);
-
-const options = program.opts();
-const commitMessage = options.commitMessage;
-
-console.log("commit message", commitMessage);
+console.log("0", process.argv[0]);
+console.log("1", process.argv[1]);
 
 /**
  * 1. create git tag + github release

@@ -9,7 +9,6 @@
   "private": true,
   "devDependencies": {
     "@types/node": "20.17.11",
-    "commander": "14.0.0",
     "zx": "8.5.4"
   },
   "workspaces": [
