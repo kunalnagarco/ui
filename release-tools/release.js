@@ -2,6 +2,7 @@
  * When merging to main, GitHub actions will release a version to npm
  * for each package in the yarn workspace.
  */
+const { program } = require("commander");
 const { $, cd, glob } = require("zx");
 const { readFileSync } = require("fs");
 
