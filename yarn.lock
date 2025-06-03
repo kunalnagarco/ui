@@ -753,6 +753,7 @@ __metadata:
   resolution: "kunalnagarco-ui@workspace:."
   dependencies:
     "@types/node": "npm:20.17.11"
+    zx: "npm:8.5.4"
   languageName: unknown
   linkType: soft
 
@@ -1172,5 +1173,14 @@ __metadata:
   version: 0.1.0
   resolution: "yocto-queue@npm:0.1.0"
   checksum: 10c0/dceb44c28578b31641e13695d200d34ec4ab3966a5729814d5445b194933c096b7ced71494ce53a0e8820685d1d010df8b2422e5bf2cdea7e469d97ffbea306f
+  languageName: node
+  linkType: hard
+
+"zx@npm:8.5.4":
+  version: 8.5.4
+  resolution: "zx@npm:8.5.4"
+  bin:
+    zx: build/cli.js
+  checksum: 10c0/073bd39ba46d278c8bfb72df641a6eed409974633cf5195fc1d5148517c454319e35413eb8076821928d02a1ae5a4f863147712c538e61fe0a4b78c0e01a10be
   languageName: node
   linkType: hard
