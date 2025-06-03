@@ -10,13 +10,15 @@ async function main() {
   for (const dir of packages) {
     const before = process.cwd();
     cd(dir);
-    const packageJsonStr = readFileSync("package.json", {
-      encoding: "utf8",
-    });
-    const { version } = JSON.parse(packageJsonStr);
-    const hash = new Date().getTime();
-    await $`yarn version --immediate ${version}-alpha-${hash}`;
-    await $`yarn npm publish --tag alpha`;
+    // const packageJsonStr = readFileSync("package.json", {
+    //   encoding: "utf8",
+    // });
+    // const { version } = JSON.parse(packageJsonStr);
+    // const hash = new Date().getTime();
+    await $`echo "//registry.npmjs.org/:_authToken=${process.env.NPM_TOKEN}" >> ./.npmrc`;
+    await $`cat ./.npmrc`;
+    // await $`yarn version --immediate ${version}-alpha-${hash}`;
+    // await $`yarn npm publish --tag alpha`;
     cd(before);
   }
 }
