@@ -8,7 +8,7 @@ const { readFileSync } = require("fs");
 
 program.option("--commit-message").argument("<string>");
 
-program.parse();
+program.parse(process.argv);
 
 const options = program.opts();
 const commitMessage = options.commitMessage;
