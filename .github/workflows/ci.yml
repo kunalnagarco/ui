@@ -27,13 +27,11 @@ jobs:
         run: yarn --immutable
       - name: Build
         run: yarn build:all
-      # - name: Creating .npmrc
-      #   run: |
-      #     cat << EOF > "$HOME/.npmrc"
-      #       //registry.npmjs.org/:_authToken=$NPM_TOKEN
-      #     EOF
-      #   env:
-      #     NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: Add npmToken to .yarnrc.yml
+        run: |
+          echo npmAuthToken: "$NPM_TOKEN" >> ./.yarnrc.yml
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: Alpha release
         run: node release-tools/pre-release.js
         env:

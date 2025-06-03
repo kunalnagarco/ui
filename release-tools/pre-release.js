@@ -16,7 +16,6 @@ async function main() {
     });
     const { version } = JSON.parse(packageJsonStr);
     const hash = new Date().getTime();
-    await $`echo "//registry.npmjs.org/:_authToken=${process.env.NPM_TOKEN}" >> ./.npmrc`;
     await $`yarn version --immediate ${version}-alpha-${hash}`;
     await $`yarn npm publish --tag alpha`;
     cd(before);
