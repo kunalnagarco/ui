@@ -21,7 +21,7 @@ async function main() {
     const { version } = JSON.parse(packageJsonStr);
     const hash = new Date().getTime();
     await $`yarn version --immediate ${version}-alpha-${hash}`;
-    await $`yarn npm publish --tag alpha --provenance`;
+    await $`yarn npm publish --tag alpha`;
     cd(before);
   }
 }
