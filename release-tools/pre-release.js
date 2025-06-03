@@ -7,6 +7,7 @@ async function main() {
     deep: 1,
     onlyDirectories: true,
   });
+  $.verbose = true;
   for (const dir of packages) {
     const before = process.cwd();
     cd(dir);
