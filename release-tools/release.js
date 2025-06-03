@@ -6,9 +6,7 @@ const { program } = require("commander");
 const { $, cd, glob } = require("zx");
 const { readFileSync } = require("fs");
 
-program.option("--commit-message");
-
-program.parse(process.argv);
+program.option("--commit-message").parse();
 
 const options = program.opts();
 console.log(options);
