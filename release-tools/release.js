@@ -2,8 +2,18 @@
  * When merging to main, GitHub actions will release a version to npm
  * for each package in the yarn workspace.
  */
+const { program } = require("commander");
 const { $, cd, glob } = require("zx");
 const { readFileSync } = require("fs");
+
+program.option("--commit-message").argument("<string>");
+
+program.parse();
+
+const options = program.opts();
+const commitMessage = options.commitMessage;
+
+console.log("commit message", commitMessage);
 
 /**
  * 1. create git tag + github release
@@ -28,7 +38,7 @@ async function main() {
   //   await $`yarn version --immediate ${version}-alpha-${hash}`;
   //   await $`yarn npm publish --tag alpha`;
   //   cd(before);
-  }
+  // }
 }
 
 /**

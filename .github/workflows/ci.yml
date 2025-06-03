@@ -29,12 +29,13 @@ jobs:
         run: yarn build:all
       - name: Add npmToken to .yarnrc.yml
         run: |
-          echo ${{ github.event.head_commit.message }}
           echo npmAuthToken: "$NPM_TOKEN" >> ./.yarnrc.yml
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: Alpha release
-        run: node release-tools/pre-release.js
+        # run: node release-tools/pre-release.js
+        run: |
+          node release-tools/release.js --commit-message="${{ github.event.head_commit.message }}"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
