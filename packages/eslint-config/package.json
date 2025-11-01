@@ -41,7 +41,7 @@
   },
   "devDependencies": {
     "@kunalnagarco/ui.tsconfig": "workspace:*",
-    "rimraf": "6.0.1",
+    "rimraf": "6.1.0",
     "typescript": "5.8.2"
   },
   "peerDependencies": {
