@@ -14,6 +14,6 @@
     "react-library.json"
   ],
   "scripts": {
-    "pack:run": "yarn pack"
+    "pack:run": "npm pack"
   }
 }

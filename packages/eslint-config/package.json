@@ -37,10 +37,10 @@
   },
   "scripts": {
     "build": "rimraf dist && tsc",
-    "pack:run": "yarn pack"
+    "pack:run": "npm pack"
   },
   "devDependencies": {
-    "@kunalnagarco/ui.tsconfig": "workspace:*",
+    "@kunalnagarco/ui.tsconfig": "*",
     "rimraf": "6.0.1",
     "typescript": "5.8.2"
   },
