@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "build:all": "npm run build --workspaces",
-    "lint:all": "npm run lint --workspaces"
+    "build:all": "npm run build --workspaces --if-present",
+    "lint:all": "npm run lint --workspaces --if-present"
   },
   "private": true,
   "devDependencies": {
