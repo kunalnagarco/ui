@@ -16,7 +16,7 @@
   "devDependencies": {
     "@kunalnagarco/ui.tsconfig": "*",
     "eslint": "8.x",
-    "rimraf": "6.0.1",
+    "rimraf": "6.1.2",
     "typescript": "5.8.2"
   },
   "scripts": {
