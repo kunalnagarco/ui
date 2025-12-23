@@ -8,7 +8,9 @@
   },
   "private": true,
   "devDependencies": {
-    "@types/node": "22.19.3"
+    "@types/node": "22.19.3",
+    "commander": "14.0.0",
+    "zx": "8.5.4"
   },
   "workspaces": [
     "packages/*"
