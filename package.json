@@ -8,7 +8,7 @@
   },
   "private": true,
   "devDependencies": {
-    "@types/node": "22.15.29"
+    "@types/node": "22.19.3"
   },
   "workspaces": [
     "packages/*"
