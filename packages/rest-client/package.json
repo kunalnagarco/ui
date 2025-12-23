@@ -14,14 +14,14 @@
   "main": "dist/index.js",
   "module": "dist/index.d.ts",
   "devDependencies": {
-    "@kunalnagarco/ui.tsconfig": "workspace:*",
+    "@kunalnagarco/ui.tsconfig": "*",
     "eslint": "8.x",
     "rimraf": "6.0.1",
     "typescript": "5.8.2"
   },
   "scripts": {
     "build": "rimraf dist && tsc",
-    "pack:run": "yarn pack",
+    "pack:run": "npm pack",
     "lint": "eslint",
     "test:watch": "jest --watch"
   }

@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "build:all": "yarn workspaces foreach -A -vip --topological-dev run build",
-    "lint:all": "yarn workspaces foreach -A -vip --topological-dev run lint"
+    "build:all": "npm run build --workspaces --if-present",
+    "lint:all": "npm run lint --workspaces --if-present"
   },
   "private": true,
   "devDependencies": {
@@ -12,6 +12,5 @@
   },
   "workspaces": [
     "packages/*"
-  ],
-  "packageManager": "yarn@4.12.0"
+  ]
 }
