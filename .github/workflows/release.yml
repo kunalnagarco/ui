@@ -1,0 +1,74 @@
+name: Release
+
+on:
+  pull_request:
+    types: [closed]
+    branches:
+      - main
+
+jobs:
+  release:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      id-token: write
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version-file: ".nvmrc"
+          registry-url: "https://registry.npmjs.org"
+
+      - name: Install dependencies
+        run: npm ci --legacy-peer-deps
+
+      - name: Get changed files
+        id: changed
+        run: |
+          echo "files<<EOF" >> $GITHUB_OUTPUT
+          git diff --name-only ${{ github.event.pull_request.base.sha }} ${{ github.event.pull_request.head.sha }} >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+
+      - name: Bump versions and update changelogs
+        env:
+          PR_TITLE: ${{ github.event.pull_request.title }}
+          CHANGED_FILES: ${{ steps.changed.outputs.files }}
+        run: node scripts/release.mjs
+
+      - name: Build all packages
+        run: npm run build:all
+
+      - name: Commit version bumps and changelogs
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add packages/*/package.json packages/*/CHANGELOG.md
+          git diff --staged --quiet && echo "Nothing to commit, skipping." && exit 0
+          git commit -m "chore: release [skip ci]"
+
+      - name: Create git tags and push
+        run: |
+          node -e "
+            const releases = JSON.parse(require('fs').readFileSync('.released-packages.json'));
+            for (const { name, version } of Object.values(releases)) {
+              require('child_process').execSync(\`git tag '\${name}@\${version}'\`);
+            }
+          "
+          git push origin main --tags
+
+      - name: Publish released packages
+        run: |
+          node -e "
+            const { execSync } = require('child_process');
+            const releases = JSON.parse(require('fs').readFileSync('.released-packages.json'));
+            for (const [dir] of Object.entries(releases)) {
+              execSync(\`npm publish --workspace=\${dir} --provenance --access public --tag latest\`, { stdio: 'inherit' });
+            }
+          "
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

@@ -1,24 +1,32 @@
-name: Continuous Deployment
+name: Release (Alpha)
 
 on:
   push:
     branches:
-      - main
+      - "**"
+      - "!main"
 
 jobs:
-  build:
+  publish-alpha:
     runs-on: ubuntu-latest
     permissions:
-      contents: write
+      contents: read
       id-token: write
     steps:
       - uses: actions/checkout@v5
-        with:
-          fetch-depth: 0
+
       - uses: actions/setup-node@v6
         with:
           node-version-file: ".nvmrc"
+          registry-url: "https://registry.npmjs.org"
+
       - name: Install dependencies
         run: npm ci --legacy-peer-deps
-      - name: Build
+
+      - name: Build all packages
         run: npm run build:all
+
+      - name: Publish alpha pre-releases
+        run: node scripts/publish-prerelease.mjs
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
