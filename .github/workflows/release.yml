@@ -32,14 +32,17 @@ jobs:
         run: npm run build:all
 
       - name: Get OIDC token for npm trusted publishing
+        id: oidc_alpha
         run: |
           OIDC_TOKEN=$(curl -sSf \
             -H "Authorization: bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" \
-            "${ACTIONS_ID_TOKEN_REQUEST_URL}&audience=https://registry.npmjs.org" \
+            "${ACTIONS_ID_TOKEN_REQUEST_URL}&audience=npm" \
             | jq -r '.value')
-          echo "NODE_AUTH_TOKEN=$OIDC_TOKEN" >> $GITHUB_ENV
+          echo "token=$OIDC_TOKEN" >> $GITHUB_OUTPUT
 
       - name: Publish alpha pre-releases
+        env:
+          NODE_AUTH_TOKEN: ${{ steps.oidc_alpha.outputs.token }}
         run: node scripts/publish-prerelease.mjs
 
   release:
@@ -97,14 +100,17 @@ jobs:
           git push origin main --tags
 
       - name: Get OIDC token for npm trusted publishing
+        id: oidc_release
         run: |
           OIDC_TOKEN=$(curl -sSf \
             -H "Authorization: bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" \
-            "${ACTIONS_ID_TOKEN_REQUEST_URL}&audience=https://registry.npmjs.org" \
+            "${ACTIONS_ID_TOKEN_REQUEST_URL}&audience=npm" \
             | jq -r '.value')
-          echo "NODE_AUTH_TOKEN=$OIDC_TOKEN" >> $GITHUB_ENV
+          echo "token=$OIDC_TOKEN" >> $GITHUB_OUTPUT
 
       - name: Publish released packages
+        env:
+          NODE_AUTH_TOKEN: ${{ steps.oidc_release.outputs.token }}
         run: |
           node -e "
             const { execSync } = require('child_process');
