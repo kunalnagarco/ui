@@ -55,7 +55,7 @@
     "eslint-plugin-import-x": "4.x",
     "eslint-plugin-jest": "28.x",
     "rimraf": "6.0.1",
-    "typescript": "5.8.2",
+    "typescript": "5.9.3",
     "typescript-eslint": "8.x"
   },
   "peerDependencies": {
