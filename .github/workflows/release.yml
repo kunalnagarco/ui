@@ -26,7 +26,7 @@ jobs:
       - run: npm install -g npm@latest
       - run: npm ci --legacy-peer-deps
       - run: npm run build:all
-      - run: node scripts/publish-prerelease.mjs
+      - run: node .github/scripts/publish-prerelease.mjs
 
   release:
     name: Bump, tag, and publish
@@ -59,7 +59,7 @@ jobs:
         env:
           PR_TITLE: ${{ github.event.pull_request.title }}
           CHANGED_FILES: ${{ steps.changed.outputs.files }}
-        run: node scripts/release.mjs
+        run: node .github/scripts/release.mjs
 
       - run: npm run build:all
 
@@ -73,8 +73,8 @@ jobs:
 
       - name: Create git tags and push
         run: |
-          node scripts/tag-releases.mjs
+          node .github/scripts/tag-releases.mjs
           git push origin main --tags
 
       - name: Publish to npm
-        run: node scripts/publish-release.mjs
+        run: node .github/scripts/publish-release.mjs
