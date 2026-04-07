@@ -1,0 +1,80 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - "**"
+      - "!main"
+  pull_request:
+    types: [closed]
+    branches:
+      - main
+
+jobs:
+  publish-alpha:
+    name: Publish alpha pre-release
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v6
+        with:
+          node-version-file: ".nvmrc"
+      - run: npm install -g npm@latest
+      - run: npm ci --legacy-peer-deps
+      - run: npm run build:all
+      - run: node .github/scripts/publish-prerelease.mjs
+
+  release:
+    name: Bump, tag, and publish
+    if: github.event_name == 'pull_request' && github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      id-token: write
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version-file: ".nvmrc"
+
+      - run: npm install -g npm@latest
+      - run: npm ci --legacy-peer-deps
+
+      - name: Detect changed files
+        id: changed
+        run: |
+          echo "files<<EOF" >> $GITHUB_OUTPUT
+          git diff --name-only ${{ github.event.pull_request.base.sha }} ${{ github.event.pull_request.head.sha }} >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+
+      - name: Bump versions and update changelogs
+        env:
+          PR_TITLE: ${{ github.event.pull_request.title }}
+          CHANGED_FILES: ${{ steps.changed.outputs.files }}
+        run: node .github/scripts/release.mjs
+
+      - run: npm run build:all
+
+      - name: Commit and push version bumps
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add packages/*/package.json packages/*/CHANGELOG.md
+          git diff --staged --quiet && echo "Nothing to commit, skipping." && exit 0
+          git commit -m "chore: release [skip ci]"
+
+      - name: Create git tags and push
+        run: |
+          node .github/scripts/tag-releases.mjs
+          git push origin main --tags
+
+      - name: Publish to npm
+        run: node .github/scripts/publish-release.mjs
