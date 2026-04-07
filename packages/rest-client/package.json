@@ -16,7 +16,7 @@
   "module": "dist/index.d.ts",
   "devDependencies": {
     "@kunalnagarco/ui.tsconfig": "*",
-    "eslint": "8.x",
+    "eslint": "10.x",
     "rimraf": "6.0.1",
     "typescript": "5.8.2"
   },
