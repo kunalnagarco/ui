@@ -31,21 +31,16 @@ jobs:
       - name: Build all packages
         run: npm run build:all
 
-      - name: Debug npm config
+      - name: Get OIDC token for npm trusted publishing
         run: |
-          echo "=== .npmrc ==="
-          cat "$NPM_CONFIG_USERCONFIG" | sed 's/_authToken=.*/[REDACTED]/'
-          echo "=== npm version ==="
-          npm --version
-          echo "=== OIDC env ==="
-          echo "ACTIONS_ID_TOKEN_REQUEST_URL set: $([ -n "$ACTIONS_ID_TOKEN_REQUEST_URL" ] && echo yes || echo no)"
+          OIDC_TOKEN=$(curl -sSf \
+            -H "Authorization: bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" \
+            "${ACTIONS_ID_TOKEN_REQUEST_URL}&audience=https://registry.npmjs.org" \
+            | jq -r '.value')
+          echo "NODE_AUTH_TOKEN=$OIDC_TOKEN" >> $GITHUB_ENV
 
       - name: Publish alpha pre-releases
         run: node scripts/publish-prerelease.mjs
-
-      - name: Print npm debug log on failure
-        if: failure()
-        run: cat ~/.npm/_logs/*.log 2>/dev/null || cat /home/runner/.npm/_logs/*.log 2>/dev/null || echo "No log found"
 
   release:
     if: github.event_name == 'pull_request' && github.event.pull_request.merged == true
@@ -100,6 +95,14 @@ jobs:
             }
           "
           git push origin main --tags
+
+      - name: Get OIDC token for npm trusted publishing
+        run: |
+          OIDC_TOKEN=$(curl -sSf \
+            -H "Authorization: bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" \
+            "${ACTIONS_ID_TOKEN_REQUEST_URL}&audience=https://registry.npmjs.org" \
+            | jq -r '.value')
+          echo "NODE_AUTH_TOKEN=$OIDC_TOKEN" >> $GITHUB_ENV
 
       - name: Publish released packages
         run: |
