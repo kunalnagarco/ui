@@ -52,7 +52,7 @@ jobs:
         id: changed
         run: |
           echo "files<<EOF" >> $GITHUB_OUTPUT
-          git diff --name-only ${{ github.event.pull_request.base.sha }} ${{ github.sha }} >> $GITHUB_OUTPUT
+          git diff --name-only ${{ github.event.pull_request.base.sha }} ${{ github.event.pull_request.head.sha }} >> $GITHUB_OUTPUT
           echo "EOF" >> $GITHUB_OUTPUT
 
       - name: Bump versions and update changelogs
