@@ -1,5 +1,11 @@
 # Changelog
 
+## [3.0.4] - 2026-04-07
+
+### Miscellaneous
+
+- update dependency rimraf to v6.1.3
+
 ## [3.0.3] - 2026-04-07
 
 ### Miscellaneous
