@@ -22,7 +22,8 @@ for (const dir of packageDirs) {
   pkg.version = preVersion;
   writeFileSync(pkgPath, JSON.stringify(pkg, null, 2) + "\n");
 
-  execSync(`npm publish --workspace=${dir} --tag alpha --access public`, {
-    stdio: "inherit",
-  });
+  execSync(
+    `npm publish --workspace=${dir} --tag alpha --access public --loglevel verbose`,
+    { stdio: "inherit" }
+  );
 }
