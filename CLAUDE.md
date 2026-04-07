@@ -6,3 +6,4 @@
 - Always squash merge PRs.
 - PR titles must follow the [conventional commit](https://www.conventionalcommits.org/) format (e.g. `feat: add button`, `fix!: breaking change`). This is enforced by CI.
 - Do not commit or push to GitHub without explicit confirmation from the user.
+- Never add Claude as a co-author in commit messages (no `Co-authored-by: Claude` or `Co-Authored-By: ... noreply@anthropic.com` lines).
