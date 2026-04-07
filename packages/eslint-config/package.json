@@ -7,7 +7,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kunalnagarco/ui.git"
+    "url": "https://github.com/kunalnagarco/ui"
   },
   "main": "dist/index.js",
   "keywords": [
