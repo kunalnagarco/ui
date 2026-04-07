@@ -12,6 +12,7 @@ on:
 
 jobs:
   publish-alpha:
+    name: Publish alpha pre-release
     if: github.event_name == 'push'
     runs-on: ubuntu-latest
     permissions:
@@ -19,24 +20,16 @@ jobs:
       id-token: write
     steps:
       - uses: actions/checkout@v5
-
       - uses: actions/setup-node@v6
         with:
           node-version-file: ".nvmrc"
-
-      - name: Upgrade npm for trusted publishing support
-        run: npm install -g npm@latest
-
-      - name: Install dependencies
-        run: npm ci --legacy-peer-deps
-
-      - name: Build all packages
-        run: npm run build:all
-
-      - name: Publish alpha pre-releases
-        run: node scripts/publish-prerelease.mjs
+      - run: npm install -g npm@latest
+      - run: npm ci --legacy-peer-deps
+      - run: npm run build:all
+      - run: node scripts/publish-prerelease.mjs
 
   release:
+    name: Bump, tag, and publish
     if: github.event_name == 'pull_request' && github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     permissions:
@@ -52,13 +45,10 @@ jobs:
         with:
           node-version-file: ".nvmrc"
 
-      - name: Upgrade npm for trusted publishing support
-        run: npm install -g npm@latest
+      - run: npm install -g npm@latest
+      - run: npm ci --legacy-peer-deps
 
-      - name: Install dependencies
-        run: npm ci --legacy-peer-deps
-
-      - name: Get changed files
+      - name: Detect changed files
         id: changed
         run: |
           echo "files<<EOF" >> $GITHUB_OUTPUT
@@ -71,10 +61,9 @@ jobs:
           CHANGED_FILES: ${{ steps.changed.outputs.files }}
         run: node scripts/release.mjs
 
-      - name: Build all packages
-        run: npm run build:all
+      - run: npm run build:all
 
-      - name: Commit version bumps and changelogs
+      - name: Commit and push version bumps
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
@@ -84,20 +73,8 @@ jobs:
 
       - name: Create git tags and push
         run: |
-          node -e "
-            const releases = JSON.parse(require('fs').readFileSync('.released-packages.json'));
-            for (const { name, version } of Object.values(releases)) {
-              require('child_process').execSync(\`git tag '\${name}@\${version}'\`);
-            }
-          "
+          node scripts/tag-releases.mjs
           git push origin main --tags
 
-      - name: Publish released packages
-        run: |
-          node -e "
-            const { execSync } = require('child_process');
-            const releases = JSON.parse(require('fs').readFileSync('.released-packages.json'));
-            for (const [dir] of Object.entries(releases)) {
-              execSync(\`npm publish --workspace=\${dir} --provenance --access public --tag latest\`, { stdio: 'inherit' });
-            }
-          "
+      - name: Publish to npm
+        run: node scripts/publish-release.mjs
