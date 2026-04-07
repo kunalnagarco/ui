@@ -22,7 +22,6 @@ jobs:
       - uses: actions/setup-node@v6
         with:
           node-version-file: ".nvmrc"
-          registry-url: "https://registry.npmjs.org"
 
       - name: Install dependencies
         run: npm ci --legacy-peer-deps
@@ -70,5 +69,3 @@ jobs:
               execSync(\`npm publish --workspace=\${dir} --provenance --access public --tag latest\`, { stdio: 'inherit' });
             }
           "
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
