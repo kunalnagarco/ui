@@ -20,13 +20,26 @@ jobs:
       id-token: write
     steps:
       - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
       - uses: actions/setup-node@v6
         with:
           node-version-file: ".nvmrc"
       - run: npm install -g npm@latest
       - run: npm ci --legacy-peer-deps
+
+      - name: Detect changed files
+        id: changed
+        run: |
+          echo "files<<EOF" >> $GITHUB_OUTPUT
+          git diff origin/main...HEAD --name-only >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+
       - run: npm run build:all
-      - run: node .github/scripts/publish-prerelease.mjs
+      - name: Publish alpha pre-release
+        env:
+          CHANGED_FILES: ${{ steps.changed.outputs.files }}
+        run: node .github/scripts/publish-prerelease.mjs
 
   release:
     name: Bump, tag, and publish
