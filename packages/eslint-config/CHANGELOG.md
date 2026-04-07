@@ -1,5 +1,11 @@
 # Changelog
 
+## [3.0.2] - 2026-04-07
+
+### Miscellaneous
+
+- update eslint monorepo to v10 (major)
+
 ## [3.0.1] - 2026-04-07
 
 ### Features
