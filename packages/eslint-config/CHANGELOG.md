@@ -1,5 +1,11 @@
 # Changelog
 
+## [3.0.5] - 2026-04-08
+
+### Miscellaneous
+
+- update dependency typescript to v6
+
 ## [3.0.4] - 2026-04-07
 
 ### Miscellaneous
